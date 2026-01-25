@@ -6,6 +6,8 @@ KOSMETIKA,avon,1
 KOSMETIKA,balea,2
 KOSMETIKA,dermacol,1
 ÚKLID,freddy,1
+ÚKLID,okena,1
+ÚKLID,savo,1
 
 ostatní hledání:
 
@@ -46,8 +48,14 @@ HYGIENA,papírové kapesníky,1
 HYGIENA,preservativ,1
 HYGIENA,toaletní papír,2
 
+ZVĚŘ,kočičí hračky,1
 ZVĚŘ,kočičí kapsičky,1
+ZVĚŘ,kočičí konzervy,1
 ZVĚŘ,psí granule,1
+ZVĚŘ,psí hračky,1
+ZVĚŘ,psí konzervy,1
+ZVĚŘ,stelivo pro kočky,1
+ZVĚŘ,stelivo pro psy,1
 
 ÚKLID,aceton,1
 ÚKLID,benzín,1
@@ -55,7 +63,6 @@ ZVĚŘ,psí granule,1
 ÚKLID,hadr na podlahu,1
 ÚKLID,mop,1
 ÚKLID,saponát,1
-ÚKLID,savo,1
 ÚKLID,technický líh,1
 ÚKLID,čistič odpadu,1
 ÚKLID,čistič trouby,1
