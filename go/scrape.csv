@@ -3,21 +3,53 @@ CATEGORY,QUERY,PAGES
 deterministické hledání (určující kategorii):
 
 KOSMETIKA,avon,1
+KOSMETIKA,balea,2
 KOSMETIKA,burberry,1
 KOSMETIKA,clinique,1
+KOSMETIKA,dermacol,1
+ÚKLID,freddy,1
 
 ostatní hledání:
 
 DĚTI,pleny,1
+DĚTI,pempers,1
+
+VLASY,lak na vlasy,3
+VLASY,barva na vlasy,3
+
+HOLENÍ,pěna na holení,1
+HOLENÍ,gel na holení,1
+
+WC,toaletní papír,1
+WC,papírové kapesníky,1
+WC,dámské vložky,1
+
 NÁDOBÍ,jar,1
+NÁDOBÍ,pur,1
+
 NÁDOBÍ,leštidlo,1
+NÁDOBÍ,drátěnka,1
+NÁDOBÍ,tekutý čistící krém,1
+NÁDOBÍ,houbičky na nádobí,1
 NÁDOBÍ,odmašťovač,1
+
 NÁDOBÍ,tablety do myčky,1
+NÁDOBÍ,kapsle do myčky,1
+
 PRANÍ,prací gel,1
 PRANÍ,prací kapsle,1
 PRANÍ,prací prášek,1
+
 SLUNCE,opalovací krém,1
+
 ZVĚŘ,psí granule,1
+ZVĚŘ,kočičí kapsičky,1
+
 ÚKLID,odmašťovač,1
 ÚKLID,savo,1
-ÚKLID,čistič,1
+ÚKLID,gumové rukavice,1
+ÚKLID,saponát,1
+ÚKLID,čistič odpadu,1
+ÚKLID,čistič trouby,1
+
+VITAMÍNY,šumivé tablety,3
