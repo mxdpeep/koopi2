@@ -2,6 +2,7 @@ CATEGORY,QUERY,PAGES
 
 deterministické hledání (určující kategorii):
 
+HOLENÍ,gillette,1
 HOLENÍ,old spice,1
 HOLENÍ,rexona,1
 KOSMETIKA,astor,1
@@ -30,8 +31,18 @@ KOSMETIKA,řasenka,1
 KOSMETIKA,denní krém,1
 KOSMETIKA,noční krém,1
 
+DĚTI,bebivita,1
+DĚTI,dětské mléko,1
+DĚTI,hamánek,1
+DĚTI,hippp,1
+DĚTI,huggies,1
+DĚTI,nutrilon,2
 DĚTI,pampers,1
 DĚTI,pleny,1
+DĚTI,přesnídávka,1
+DĚTI,příkrm,1
+DĚTI,sunar,2
+DĚTI,vlhčené ubrousky,2
 
 HOLENÍ,gel na holení,1
 HOLENÍ,pěna na holení,1
