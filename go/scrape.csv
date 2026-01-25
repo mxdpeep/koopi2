@@ -23,14 +23,6 @@ ZVÍŘATA,whiskas,2
 
 ostatní hledání:
 
-KOSMETIKA,makeup,1
-KOSMETIKA,oční linka,1
-KOSMETIKA,pečující sprej,1
-KOSMETIKA,rtěnka,1
-KOSMETIKA,řasenka,1
-KOSMETIKA,denní krém,1
-KOSMETIKA,noční krém,1
-
 DĚTI,bebivita,1
 DĚTI,dětské mléko,1
 DĚTI,hamánek,1
@@ -49,6 +41,19 @@ HOLENÍ,pěna na holení,1
 HOLENÍ,voda po holení,1
 HOLENÍ,žiletky,1
 
+HYGIENA,dámské vložky,1
+HYGIENA,papírové kapesníky,1
+HYGIENA,preservativ,1
+HYGIENA,toaletní papír,2
+
+KOSMETIKA,denní krém,1
+KOSMETIKA,makeup,1
+KOSMETIKA,noční krém,1
+KOSMETIKA,oční linka,1
+KOSMETIKA,pečující sprej,1
+KOSMETIKA,rtěnka,1
+KOSMETIKA,řasenka,1
+
 NÁDOBÍ,drátěnka,1
 NÁDOBÍ,houbičky na nádobí,1
 NÁDOBÍ,jar,1
@@ -64,6 +69,10 @@ PRANÍ,prací kapsle,1
 PRANÍ,prací prášek,1
 
 SLUNCE,opalovací krém,1
+SLUNCE,opalovací olej,1
+SLUNCE,panthenol,1
+SLUNCE,samoopalovací krém,1
+SLUNCE,uv hydratační krém,1
 
 VITAMÍNY,šumivé tablety,3
 
@@ -71,19 +80,14 @@ VLASY,barva na vlasy,3
 VLASY,lak na vlasy,3
 VLASY,šampon,3
 
-HYGIENA,dámské vložky,1
-HYGIENA,papírové kapesníky,1
-HYGIENA,preservativ,1
-HYGIENA,toaletní papír,2
-
 ZVÍŘATA,kočičí hračka,1
 ZVÍŘATA,kočičí kapsičky,1
 ZVÍŘATA,kočičí konzervy,1
+ZVÍŘATA,pamlsky pro kočky,1
+ZVÍŘATA,pamlsky pro psy,1
 ZVÍŘATA,psí granule,1
 ZVÍŘATA,psí hračka,1
 ZVÍŘATA,psí konzerva,1
-ZVÍŘATA,pamlsky pro kočky,1
-ZVÍŘATA,pamlsky pro psy,1
 ZVÍŘATA,stelivo pro kočky,1
 ZVÍŘATA,stelivo pro psy,1
 
