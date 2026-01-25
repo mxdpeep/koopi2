@@ -5,6 +5,7 @@ deterministické hledání (určující kategorii):
 KOSMETIKA,avon,1
 KOSMETIKA,balea,2
 KOSMETIKA,dermacol,1
+KOSMETIKA,pantene,1
 ÚKLID,freddy,1
 ÚKLID,okena,1
 ÚKLID,savo,1
@@ -14,8 +15,12 @@ ZVĚŘ,whiskas,1
 ostatní hledání:
 
 KOSMETIKA,makeup,1
+KOSMETIKA,oční linka,1
+KOSMETIKA,pečující sprej,1
 KOSMETIKA,rtěnka,1
 KOSMETIKA,řasenka,1
+KOSMETIKA,denní krém,1
+KOSMETIKA,noční krém,1
 
 DĚTI,pampers,1
 DĚTI,pleny,1
