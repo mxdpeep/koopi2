@@ -125,6 +125,7 @@ var blockedGoods = []string{
 	"smetana",
 	"tvaroh",
 	"závitky",
+	"čokoládové hvězdičky",
 }
 
 // product structure
