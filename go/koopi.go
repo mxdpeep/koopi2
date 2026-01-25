@@ -43,7 +43,7 @@ const (
 	KOOPI_IMAGE_URL    = "https://img.kupi.cz"
 	KOOPI_SEARCH_URL   = "https://www.kupi.cz/hledej?f="
 	KOOPI_SUBPAGE      = "&page="
-	LOCK_FILE          = "/tmp/koopi.lock"
+	LOCK_FILE          = "/tmp/koopi2.lock"
 	LOCK_FILE_DURATION = time.Hour
 	MAX_THREADS        = 5
 	MAX_SCRAPED_GOODS  = 1000
