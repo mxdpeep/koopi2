@@ -37,10 +37,10 @@ VLASY,barva na vlasy,3
 VLASY,lak na vlasy,3
 VLASY,šampon,3
 
-WC,dámské vložky,1
-WC,papírové kapesníky,1
-WC,preservativ,1
-WC,toaletní papír,2
+HYGIENA,dámské vložky,1
+HYGIENA,papírové kapesníky,1
+HYGIENA,preservativ,1
+HYGIENA,toaletní papír,2
 
 ZVĚŘ,kočičí kapsičky,1
 ZVĚŘ,psí granule,1
@@ -49,7 +49,6 @@ ZVĚŘ,psí granule,1
 ÚKLID,hadr na podlahu,1
 ÚKLID,ipa,1
 ÚKLID,mop,1
-ÚKLID,odmašťovač,1
 ÚKLID,saponát,1
 ÚKLID,savo,1
 ÚKLID,čistič odpadu,1
