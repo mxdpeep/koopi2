@@ -36,14 +36,14 @@ db: build
 
 img:
 	@echo "Converting images ..."
-#	@cd images && find . -type f \( -name "*.jpg" -o -name "*.png" \) -print0 | xargs -0 -P $(shell nproc) -I {} sh -c ' \
+	@cd images && find . -type f \( -name "*.jpg" -o -name "*.png" \) -print0 | xargs -0 -P $(shell nproc) -I {} sh -c ' \
 		INPUT="$$1"; \
 		OUTPUT=$${INPUT%.*}.webp; \
 		if [ "$$INPUT" -nt "$$OUTPUT" ] || [ ! -f "$$OUTPUT" ]; then \
 			convert "$$INPUT" -quality 80 "$$OUTPUT"; \
 		fi \
 	' _ {}
-#	@cd markets-v2 && find . -type f \( -name "*.jpg" -o -name "*.png" \) -print0 | xargs -0 -P $(shell nproc) -I {} sh -c ' \
+	@cd markets-v2 && find . -type f \( -name "*.jpg" -o -name "*.png" \) -print0 | xargs -0 -P $(shell nproc) -I {} sh -c ' \
 		INPUT="$$1"; \
 		OUTPUT=$${INPUT%.*}.webp; \
 		if [ "$$INPUT" -nt "$$OUTPUT" ] || [ ! -f "$$OUTPUT" ]; then \
@@ -53,9 +53,9 @@ img:
 
 # macros
 everything: clear db img cf backup
-#	@-git add -A
-#	@-git commit -am 'automatic update'
-#	@-git push origin master
+	@-git add -A
+	@-git commit -am 'automatic update'
+	@-git push origin master
 
 cf:
 #	@echo "Building version: $(GIT_REV)"
