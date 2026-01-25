@@ -28,11 +28,11 @@ backup:
 
 db: build
 	@cd go/ && ./koopi
-#	@cp go/koopi.json ./data.json
-#	@mkdir -p $(STEMS_DIR)
-#	@cp data.json $(STEMS_DIR)/data_$(TIMESTAMP).json
-#	@printf '{\n  "count": "%s",\n  "date": "%s",\n  "hash": "%s",\n  "version": "%s"\n}\n' \
-#		"$(COUNT_REV)" "$(DATE_REV)" "$(HASH_REV)" "$(GIT_REV)" > meta.json
+	@cp go/koopi.json ./data.json
+	@mkdir -p $(STEMS_DIR)
+	@cp data.json $(STEMS_DIR)/data_$(TIMESTAMP).json
+	@printf '{\n  "count": "%s",\n  "date": "%s",\n  "hash": "%s",\n  "version": "%s"\n}\n' \
+		"$(COUNT_REV)" "$(DATE_REV)" "$(HASH_REV)" "$(GIT_REV)" > meta.json
 
 img:
 	@echo "Converting images ..."
