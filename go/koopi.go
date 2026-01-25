@@ -126,7 +126,7 @@ var blockedGoods = []string{
 	"skořicové kroužky",
 	"smetana",
 	"tvaroh",
-	"Těstoviny",
+	"těstoviny",
 	"závitky",
 	"čokoládové hvězdičky",
 }
