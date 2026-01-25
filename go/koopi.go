@@ -116,11 +116,15 @@ var (
 
 // product names to ignore
 var blockedGoods = []string{
-	"tvaroh",
+	"jarmark",
+	"mléko čerstvé",
+	"Shiitake",
+	"brambůrky",
 	"jogurt",
-	"závitky",
-	"smetana",
 	"pomazánkové",
+	"smetana",
+	"tvaroh",
+	"závitky",
 }
 
 // product structure

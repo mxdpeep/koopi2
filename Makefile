@@ -22,9 +22,9 @@ build:
 	@echo "Building app ..."
 	@cd go/ && go build -o koopi .
 
-#backup:
-#	@echo "Making backup ..."
-#	@rclone copy -P --exclude '.git/**' --exclude 'cache/' --exclude 'export/' . gsc:koopi/
+backup:
+	@echo "Making backup ..."
+	@rclone copy -P --exclude '.git/**' --exclude 'cache/' --exclude 'export/' . gsc:koopi2/
 
 db: build
 	@cd go/ && ./koopi
