@@ -2,15 +2,23 @@ CATEGORY,QUERY,PAGES
 
 deterministické hledání (určující kategorii):
 
+HOLENÍ,old spice,1
+HOLENÍ,rexona,1
+KOSMETIKA,astor,1
 KOSMETIKA,avon,1
 KOSMETIKA,balea,2
 KOSMETIKA,dermacol,1
-KOSMETIKA,pantene,1
+KOSMETIKA,loreal,1
+KOSMETIKA,maybelline,1
+KOUPEL,dove,2
+KOUPEL,nivea,2
+VLASY,garnier,2
+VLASY,pantene,1
+ZVÍŘATA,pedigree,2
+ZVÍŘATA,whiskas,2
 ÚKLID,freddy,1
 ÚKLID,okena,1
 ÚKLID,savo,1
-ZVĚŘ,pedigree,1
-ZVĚŘ,whiskas,1
 
 ostatní hledání:
 
@@ -55,16 +63,16 @@ HYGIENA,papírové kapesníky,1
 HYGIENA,preservativ,1
 HYGIENA,toaletní papír,2
 
-ZVĚŘ,kočičí hračka,1
-ZVĚŘ,kočičí kapsičky,1
-ZVĚŘ,kočičí konzervy,1
-ZVĚŘ,psí granule,1
-ZVĚŘ,psí hračka,1
-ZVĚŘ,psí konzerva,1
-ZVĚŘ,pamlsky pro kočky,1
-ZVĚŘ,pamlsky pro psy,1
-ZVĚŘ,stelivo pro kočky,1
-ZVĚŘ,stelivo pro psy,1
+ZVÍŘATA,kočičí hračka,1
+ZVÍŘATA,kočičí kapsičky,1
+ZVÍŘATA,kočičí konzervy,1
+ZVÍŘATA,psí granule,1
+ZVÍŘATA,psí hračka,1
+ZVÍŘATA,psí konzerva,1
+ZVÍŘATA,pamlsky pro kočky,1
+ZVÍŘATA,pamlsky pro psy,1
+ZVÍŘATA,stelivo pro kočky,1
+ZVÍŘATA,stelivo pro psy,1
 
 ÚKLID,aceton,1
 ÚKLID,benzín,1
