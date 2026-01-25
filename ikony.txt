@@ -1,0 +1,19 @@
+ÚSTA - pasty, kartáčky, ústní vody, nitě
+VLASY - šampony, gely, oleje na vousy, barvy
+KOSMETIKA - krémy, séra, masky, micelární vody, rtěnky, makeup
+
+KOUPEL - gely, mýdla, soli do koupele, oleje do koupele
+HOLENÍ - žiletky, strojky, pěny, vosky
+VŮNĚ - parfémy, deodoranty, antiperspiranty
+
+PRANÍ - prášky, prací gely, kapsle
+ÚKLID - chemie na všechno od podlahy po WC
+NÁDOBÍ - tablety do myčky, jar, leštidla, odmašťovače
+
+SLUNCE - opalovací krémy, repelenty
+DĚTI - kosmetika pro prcky, výživa, pleny
+ZVĚŘ - granule, stelivo, hračky
+
+PAPÍR - toaletní papír, kapesníky, vložky
+VITAMÍNY - doplňky stravy, zdravá výživa
+OSTATNÍ

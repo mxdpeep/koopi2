@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>🤑 SLEVIČKY</title>
+<link rel="canonical" href="https://slevicky.pages.dev/">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://umami.gscloud.cz">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://umami.gscloud.cz">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="description" content="Aktuální slevy potravin + akční zboží přehledně na jednom místě. (public alfa)">
+<meta property="og:description" content="Aktuální slevy potravin + akční zboží přehledně na jednom místě. (public alfa)">
+<meta name="theme-color" content="#fff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="🤑 Slevičky">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="address=no">
+<meta name="format-detection" content="date=no">
+<meta name="format-detection" content="email=no">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="🤑 Slevičky">
+<meta property="og:image" content="/og-image.webp">
+<link rel="apple-touch-icon" href="/favicon-152.webp" type="image/webp" sizes="152x152">
+<link rel="apple-touch-icon" href="/favicon-167.webp" type="image/webp" sizes="167x167">
+<link rel="apple-touch-icon" href="/favicon-180.webp" type="image/webp" sizes="180x180">
+<link rel="apple-touch-startup-image" href="/logo.webp" type="image/webp">
+<link rel="icon" type="image/webp" href="/favicon-256.webp" sizes="256x256">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/beercss/beercss@v3.13.3/dist/cdn/beer.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-icons@1.13.14/iconfont/material-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="manifest" href="/manifest.json">
+<script src="/jquery.min.js"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=BAA9LFls7Hk-pPlHS1MeLJYA6vECdzHUd4UYwGadcr3lnEbsV5UfYxNRsnGCCncrNegtdGeQ21qQ_VKAMI&components=hosted-buttons&disable-funding=venmo&currency=CZK"></script>
+<script defer src="https://umami.gscloud.cz/script.js" data-website-id="685f5416-a5da-48ad-bddd-27b9f4e76321"></script>
+<style>
+/* VARIABLES */
+:root {
+    --font: 'Ubuntu', sans-serif;
+    --on-surface-light: #2c2c2c;
+    --product-image-height: 100px;
+    --surface-container-high-light: #e0e0e0;
+    --surface-container-highest-light: #d4d4d4;
+    --surface-container-light: #ececec;
+    --surface-container-low-light: #f5f5f5;
+}
+
+body {min-width: 320px;font-family: var(--font);-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;overscroll-behavior-y: contain;-webkit-text-size-adjust: 100%;}
+a {text-decoration: underline!important;color: black;}
+hr {border: none;height: 4px;width: 50%;background: linear-gradient(to right, black, transparent);margin-bottom: 1rem;}
+
+/* BUTTONS OUTLINE off */
+:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {width: 16px;}
+::-webkit-scrollbar-track {background: #000;}
+::-webkit-scrollbar-thumb {background-color: #ffff00;border-radius: 4px;border: 2px solid #1a1a1a;}
+::-webkit-scrollbar-thumb:hover {background-color: #e6e600;}
+* {scrollbar-width: auto;scrollbar-color: #ffff00 #1a1a1a;}
+
+/* SORTING BUTTON VFX */
+.spin {
+    transition: transform 0.5s ease-in-out;
+    transform: rotate(360deg);
+}
+
+.pulsefav {
+    transition: transform 0.1s ease-out;
+    transform: rotate(720deg);
+}
+
+/* LIKE */
+.myheart.grayscaled {
+    filter: grayscale(1);
+    opacity: 0.5;
+    transition: transform 0.2s, filter 0.2s;
+}
+.myheart.active {
+    filter: grayscale(0);
+    opacity: 1;
+    color: #d32f2f;
+    transform: scale(1.2);
+}
+.myheart:hover {
+    transform: scale(1.3);
+}
+
+/* LOADING */
+#loading {
+    filter: blur(0px);
+    will-change: filter, opacity;
+    transition: opacity 1s ease-out, filter 1s ease-out, visibility 1s ease-out;
+}
+#loading.fade-away {
+    opacity: 0 !important;
+    filter: blur(50px) !important;
+    visibility: hidden !important;
+}
+
+/* SETTINGS */
+button.chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center;
+  height: 2.5rem;
+  gap: 0.5rem;
+  padding: 0 0.75rem !important;
+  border-radius: 5px;
+}
+button.chip .market-image {
+    width: 40px;
+    height: 40px;
+    max-height: 1.2rem;
+    margin: 0 !important;
+    display: block;
+    position: relative;
+    top: 5px;
+}
+
+/* ABOUT */
+.fred {
+    border: 2px solid #000;
+    border-radius: 50px;
+    margin: 1rem;
+    width: 100px;
+    height: 100px;
+}
+#changelog-check {display: none;}
+#changelog-check:not(:checked) ~ .content {display: none;}
+#why-check {display: none;}
+#why-check:not(:checked) ~ .content {display: none;}
+
+/* DEBUGGER */
+#debugger {width: 75%;opacity: 0.85;position: fixed;top: 70px;left: 0;z-index: 100;max-height: 300px;overflow-y: auto;display: flex;flex-direction: column-reverse;}
+.debugger-on {padding: 10px;transition: all 0.3s ease;}
+
+/* PROGRESS BAR */
+.progress-container {position: fixed;top: 0;left: 0;height: 4px;width: 100%;background-color: #000;z-index: 9999;}
+.progress-bar {height: 4px;background: linear-gradient(to right, #004, #aaa, #0af);box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);transition: width 0.1s ease;}
+
+/* PWA installer */
+.install-btn {z-index: 100;}
+
+#deals {content-visibility: auto;contain-intrinsic-size: 1px 300px;align-items: stretch;}
+#about ul {list-style-type: none;padding: 0;margin: 0;}
+#about li {padding: 4px 0;}
+
+/* HELPERS */
+.row-reverse {flex-direction: row-reverse;}
+.bigger {font-size: 2rem;font-weight: bold;}
+.bigger-like {font-size: 1.5rem;font-weight: bold;}
+.bigger-cart {font-size: 1.5rem;font-weight: bold;}
+.hover {cursor: pointer !important;}
+.mono {font-family: monospace;}
+.noselect {-webkit-user-select: none;-ms-user-select: none;user-select:none;}
+.notap {cursor: pointer;-webkit-tap-highlight-color: transparent;-moz-tap-highlight-color: transparent;-ms-tap-highlight-color: transparent;}
+.nowrap {white-space: nowrap !important;overflow: hidden;text-overflow: ellipsis;}
+.hidden {display: none;}
+
+/* VFX bombs */
+.flashbomb {animation: flash 0.5s ease-out;}
+.facespinner {display: inline-block;animation: spin 1s cubic-bezier(0.15, 0, 0.15, 1) forwards;}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(1800deg); } /* 5 plných otoček */
+}
+@keyframes flash {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* interactive buttons */
+.bigger-like, .bigger-cart {
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+    font-size: 1.5rem; /* Uprav podle potřeby */
+}
+.bigger-like:hover, .bigger-cart:hover {
+    filter: grayscale(0%);
+    transform: scale(1.2);
+}
+.bigger-like:active, .bigger-cart:active {
+    transform: scale(0.9);
+}
+
+/* NAVIGATION quirks */
+nav.vertical {flex-direction: column !important;height: auto !important;align-items: stretch !important;}
+.width-100 {width: 100%;}
+.grayscaled {filter: grayscale(100%);opacity: 0.5;}
+.basic {position: relative;top: 10px;}
+
+/* bottom nav counter badges */
+.cat-badge {display: none;position: static;z-index: 9999;border-radius: 0;letter-spacing: 0;}
+
+/* top extras row - animation */
+.extras {height: 3.0rem !important;opacity: 1;transition: all 0.3s ease;}
+.extras-hidden {opacity: 0;height: 0!important;transition: all 0.3s ease;pointer-events: none;}
+
+/* top nav - defaults */
+.slevicky {display: none;}
+.topnavtxt {display: none;}
+
+/* top nav - better positioning */
+.downer {position: relative;top: 5px;}
+
+/* BUTTONS */
+.mrsmiley {padding: 1rem;}
+.btn-top {
+    font-size: 1rem;
+    background-color: #000 !important;
+    color: white !important;
+    border: 1px solid #000 !important;
+    border-radius: 0!important;
+    padding: 5px;
+}
+.btn-secrow {
+    font-size: 1.5rem;
+    background-color: #000 !important;
+    color: white !important;
+    border: 1px solid #000 !important;
+    border-radius: 0!important;
+    padding: 5px;
+}
+.btn-bottom {
+    font-size: 1rem;
+    background-color: #000 !important;
+    color: white !important;
+    border: 1px solid #000 !important;
+    border-radius: 0!important;
+    padding: 5px;
+}
+
+/* remove hover color on top nav buttons */
+nav.top button::before, nav.top button::after {background: none !important;}
+/* default nav buttons letter-spacing */
+nav.bottom button {letter-spacing: 0;}
+
+#about, #settings {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+/* SETTINGS switch */
+.settings-button {margin-top: 20px;max-width: 300px;}
+
+/* DEALS */
+#deals {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(2, 1fr); /* mobil: 2 sloupce */
+    width: 100%;
+}
+
+/* CARD flexible */
+.product-card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 !important;
+    padding: 5px;
+    overflow: hidden;
+    background: white;
+    word-break: keep-all;
+    overflow-wrap: normal;
+}
+
+/* MARKET image */
+.market-image {
+    display: inline-block;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 0 !important;
+    padding-bottom: 10px;
+}
+
+/* PRODUCT image */
+.product-image {
+    display: block;
+    width: 100%;
+    height: var(--product-image-height); /* fixní výška pro srovnání řádků */
+    object-fit: contain; /* obrázek se nebude deformovat */
+    margin: 5px 0;
+    border-radius: 3px !important;
+}
+
+.image-wrapper {
+    height: var(--product-image-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    text-align: center;
+    border-radius: 0 !important;
+    padding-top: 10px;
+}
+
+.product-club {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #666;
+    border-radius: 0 !important;
+}
+.product-club:empty {
+    display: none;
+}
+
+.product-note {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-style: italic;
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 1rem;
+    border-radius: 0 !important;
+    margin-top: 10px;
+}
+
+.product-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+}
+
+.discount {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    padding: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.discount:empty {
+    display: none;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.validity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 0;
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+    position: relative;
+    top: 5px;
+}
+
+.volume {font-size: 0.7rem;font-weight: bold;}
+.ppunit {font-size: 0.8rem;color: #000;opacity: 0.6;font-weight: 500;}
+
+/* MEDIA selectors */
+@media(max-width: 499px) {
+    .cat-badge {display: none!important;}
+}
+@media(min-width: 500px) {
+    #deals {
+        grid-template-columns: repeat(4, 1fr); /* tablet: 4 sloupců */
+    }
+    .btn-bottom {font-size: 1.3rem;}
+    .price {font-size: 1rem;}
+    nav.bottom button {letter-spacing: 0.3rem;}
+    #about, #settings {width: 90%;margin-top: 1rem;}
+    #debugger {width: 90%}
+    .cat-badge {display: none;}
+}
+@media(min-width: 900px) {
+    #deals {
+        grid-template-columns: repeat(6, 1fr); /* tablet: 6 sloupců */
+    }
+    .btn-bottom {font-size: 1.7rem;}
+    .slevicky {display: inline-block;font-size: 1.3rem;font-weight: bold;}
+    .topnavtxt {display: inline-block;}
+    .price {font-size: 0.8rem;}
+    nav.bottom button {letter-spacing: 0.5rem;}
+    #about, #settings {width: 80%;margin-top: 1rem;}
+    #debugger {width: 80%}
+    .cat-badge {display: flex;}
+}
+@media(min-width: 1270px) {
+    #deals {
+        grid-template-columns: repeat(8, 1fr); /* desktop: 8 sloupců */
+    }
+    .btn-bottom {font-size: 1.9rem;}
+    .slevicky {display: inline-block;font-size: 1.5rem;font-weight: bold;}
+    .topnavtxt {display: inline-block;}
+    .price {font-size: 1.1rem;}
+    nav.bottom button {letter-spacing: 0.7rem;}
+    #about, #settings {width: 70%;margin-top: 1rem;}
+    #debugger {width: 50%;}
+    .cat-badge {display: flex;}
+}
+@media(min-width: 1800px) {
+    #deals {
+        grid-template-columns: repeat(10, 1fr); /* desktop: 10 sloupců */
+    }
+    .btn-bottom {font-size: 2.1rem;}
+    .topnavtxt {display: inline-block;}
+    .price {font-size: 1.2rem;}
+    nav.bottom button {letter-spacing: 1rem;}
+    #about, #settings {width: 50%;margin-top: 1rem;}
+    #debugger {width: 30%;}
+    .cat-badge {display: flex;}
+}
+
+.product-card.none {
+    display: none !important;
+}
+
+article.hidden-force {
+    display: none !important;
+}
+
+/* cool bottom nav separators */
+nav.bottom > button:not(:last-child) {
+  border-right: none !important;
+  background-image: linear-gradient(to bottom, 
+    transparent 10%,
+    #444 10%,
+    #888 70%,
+    #444 25%,
+    #000 100%
+  );
+  background-position: center right;
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+}
+  
+nav.bottom button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+</head>
+<body class="light">
+
+<!-- HTML5 top nav -->
+<nav class="righthanded top notap nowrap black white-text vertical">
+    <div class="basic row width-100">
+        <button class="install-btn light-blue" style="display: none;">
+            <span>Instalovat ♥️</span>
+        </button>
+        <div class="max noselect">
+            <span title="🌀 VŠECHNO ZAMÍCHAT" class="mrsmiley">
+                <span class="dollarface bigger">🤑</span>&nbsp;&nbsp;<span class="slevicky bold">SLEVIČKY</span>
+            </span>
+        </div>
+        <button data-id="about" class="about-btn transparent white-text">
+            <i>info</i>
+            <span class="topnavtxt downer">Info</span>
+        </button>
+        <button data-id="settings" class="settings-btn transparent white-text">
+            <i>settings</i>
+            <span class="topnavtxt downer">Nastavení</span>
+        </button>
+        <button data-id="refresh" class="refresh-btn transparent white-text">
+            <i class="bigger">refresh</i>
+        </button>
+    </div>
+    <div class="extras row width-100 center-align" style="display: grid; grid-template-columns: repeat(5, 1fr); height: auto;">
+        <button disabled class="nowrap btn-secrow black white-text bold s1">❌</button>
+        <button class="grayscaled filter-favs nowrap btn-secrow black white-text bold s1">❤️</button>
+        <button class="btn-az nowrap btn-secrow black white-text bold s1">🔽</button>
+        <button disabled class="nowrap btn-secrow black white-text bold s1">🛒</button>
+        <button disabled class="nowrap btn-secrow black white-text bold s1">🔍</button>
+    </div> 
+</nav>
+<nav class="lefthanded top notap nowrap black white-text vertical" style="display: none;">
+    <div class="basic row width-100">
+        <button data-id="refresh" class="refresh-btn transparent white-text">
+            <i>refresh</i>
+        </button>
+        <button data-id="settings" class="settings-btn transparent white-text">
+            <i>settings</i>
+            <span class="topnavtxt downer">Nastavení</span>
+        </button>
+        <button data-id="about" class="about-btn transparent white-text">
+            <i>info</i>
+            <span class="topnavtxt downer">Info</span>
+        </button>
+        <div class="max noselect right-align">
+            <span title="🌀 VŠECHNO ZAMÍCHAT" class="mrsmiley">
+                <span class="dollarface bigger">🤑</span>&nbsp;&nbsp;<span class="slevicky bold">SLEVIČKY</span>
+            </span>
+        </div>
+        <button class="install-btn light-blue" style="display: none;">
+            <span>Instalovat ♥️</span>
+        </button>
+    </div>
+    <div class="extras row width-100 center-align" style="display: grid; grid-template-columns: repeat(5, 1fr); height: auto;">
+        <button disabled class="nowrap btn-secrow black white-text bold s1">🔍</button>
+        <button disabled class="nowrap btn-secrow black white-text bold s1">🛒</button>
+        <button disabled class="nowrap btn-secrow black white-text bold s1">🔽</button>
+        <button class="grayscaled filter-favs nowrap btn-secrow black white-text bold s1">❤️</button>
+        <button disabled class="nowrap btn-secrow black white-text bold s1">❌</button>
+    </div> 
+</nav>
+
+<!-- HTML5 bottom nav -->
+<nav class="righthanded bottom notap black white-text grid no-space" style="display: grid; grid-template-columns: repeat(5, 1fr); height: auto; z-index: 999999;">
+    <button title="NÁPOJE - CUKROVINKY - OSTATNÍ" data-cats=".c-NÁPOJE, .c-CUKROVINKY, .c-OSTATNÍ" class="but5 nowrap btn-bottom black white-text bold s1">🍷🍬📦</button>
+    <button title="MASO - UZENINY - TUKY" data-cats=".c-MASO, .c-UZENINY, .c-TUKY" class="but4 nowrap btn-bottom black white-text bold s1">🥩🥓🧈</button>
+    <button title="OBILOVINY - LUŠTĚNINY - KOŘENÍ" data-cats=".c-OBILÍ, .c-LUŠTĚNINY, .c-KOŘENÍ" class="but3 nowrap btn-bottom black white-text bold s1">🌾🫘🌶️</button>
+    <button title="MLÉKO - SÝRY - VEJCE" data-cats=".c-MLÉKO, .c-SÝRY, .c-VEJCE" class="but2 nowrap btn-bottom black white-text bold s1">🥛🧀🥚</button>
+    <button title="ZELENINA - OVOCE - OŘECHY" data-cats=".c-ZELENINA, .c-OVOCE, .c-OŘECHY" class="but1 nowrap btn-bottom black white-text bold s1">🥦🍎🥜</button>
+</nav>
+<nav class="lefthanded bottom notap black white-text grid no-space" style="display: none; grid-template-columns: repeat(5, 1fr); height: auto; z-index: 999999;">
+    <button title="ZELENINA - OVOCE - OŘECHY" data-cats=".c-ZELENINA, .c-OVOCE, .c-OŘECHY" class="but1 nowrap btn-bottom black white-text bold s1">🥦🍎🥜</button>
+    <button title="MLÉKO - SÝRY - VEJCE" data-cats=".c-MLÉKO, .c-SÝRY, .c-VEJCE" class="but2 nowrap btn-bottom black white-text bold s1">🥛🧀🥚</button>
+    <button title="OBILOVINY - LUŠTĚNINY - KOŘENÍ" data-cats=".c-OBILÍ, .c-LUŠTĚNINY, .c-KOŘENÍ" class="but3 nowrap btn-bottom black white-text bold s1">🌾🫘🌶️</button>
+    <button title="MASO - UZENINY - TUKY" data-cats=".c-MASO, .c-UZENINY, .c-TUKY" class="but4 nowrap btn-bottom black white-text bold s1">🥩🥓🧈</button>
+    <button title="NÁPOJE - CUKROVINKY - OSTATNÍ" data-cats=".c-NÁPOJE, .c-CUKROVINKY, .c-OSTATNÍ" class="but5 nowrap btn-bottom black white-text bold s1">🍷🍬📦</button>
+</nav>
+
+<!-- HTML5 DEBUGGER -->
+<div id="debugger" class="notap noselect blue-grey black-text bold debugger"></div>
+
+<!-- HTML5 CONTENT -->
+<main class="container">
+    <noscript>
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: white; z-index: 9999; text-align: center; padding: 20px;">
+            <h3>
+                Tahle appka je zcela závislá na použití JavaScriptu 😐️
+                <br><br>
+                Bez něj to prostě nepůjde ...
+            </h3>
+        </div>
+    </noscript>
+    <div id="loading" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: none; align-items: center; justify-content: center; background: white; z-index: 9999; text-align: center; padding: 20px;">
+        <h2 id="loading-info" style="color: black;">
+            👩‍🔧 Nahrávám ...
+        </h2>
+    </div>
+    <div id="deals"></div>
+    <div id="about" class="hidden">
+        <h3>Statistika</h3><hr>
+        <div id="stats"></div>
+
+        <h3>Aplikace</h3><hr>
+        
+        📅 date: <b>{{DATE_REV}}</b><br>
+        👾 build: <b>{{GIT_REV}}</b><br>
+        👩‍🔧 revision: <b>{{COUNT_REV}}</b><br><br>
+        
+        <a
+            href="https://github.com/mxdpeep/koopi"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="display: inline-flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
+            <svg height="24" width="24" viewBox="0 0 16 16" version="1.1" aria-hidden="true">
+            <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+            </svg> github.com/mxdpeep/koopi</a><br>
+
+        <div id="webshare" class="webshare"><br><button><i>share</i> <span class="bigger mono">📲</span>&nbsp;&nbsp;sdílej přátelům</button><br><br></div>
+
+        <article>
+            <label for="changelog-check" class="row cursor-pointer">
+                <div class="max"><strong>🧠 Changelog</strong></div>
+                <i>expand_more</i>
+            </label>
+            <input type="checkbox" id="changelog-check">
+            <div class="content padding">
+                <b>◾️ optimalizace, refaktorizace, bugfixing</b>
+                <br><br>
+                <ul>
+                    <li><b>2026-01-18</b>
+                        <br>◾️ UI: 🔽🔼 třídění
+                        <br>◾️ UI: detekce nepodporovaných browserů
+                        <br>◾️ UI: lepší skrývání extra lišty
+                    </li>
+                    <li><b>2026-01-14</b>
+                        <br>◾️ UI: ♥️ lajky (fungují napříč obchody a stejnými produkty)
+                        <br>◾️ UI: rozbalovací Changelog
+                    </li>
+                    <li><b>2026-01-13</b>
+                        <br>◾️ UI: přepsán renderer s pomocí AI (až 20x rychlejší!)
+                        <br>◾️ UI: platnost slevy - různá barevnost
+                        <br>◾️ UI: superkategorie - badges, emojis jen pro aktivní kategorie
+                        <br>◾️ UI: load/save 
+                    </li>
+                    <li><b>2026-01-12</b>
+                        <br>◾️ DATA: klíčová slova + search preprocessing
+                        <br>◾️ DATA: optimalizace 
+                    </li>
+                    <li><b>2026-01-11</b>
+                        <br>◾️ UI: 🖤 badges - počty slev u různých obchodníků
+                        <br>◾️ DATA: deterministické třídění
+                    </li>
+                    <li><b>2026-01-10</b>
+                        <br>◾️ UI: vylepšená loga
+                        <br>◾️ UI: filtrování obchodů a kategorií
+                        <br>◾️ UI: extra lišta
+                    </li>
+                    <li><b>2026-01-09</b>
+                        <br>◾️ UI: notifikace nové verze
+                        <br>◾️ UI: pevné mezery v textu
+                    </li>
+                    <li><b>2026-01-08</b>
+                        <br>◾️ UI: úplně nejhrubší základ
+                        <br>◾️ UI: data shuffle - tlačítko 🤑
+                    </li>
+                    <li><b>2025-10-19</b>
+                        <br>◾️ DATA: základní scraper
+                    </li>
+                    <li><b>2025-09-26</b>
+                        <br>◾️ DATA: základní model
+                    </li>
+                </ul>
+            </div>
+        </article>
+        <article>
+            <label for="why-check" class="row cursor-pointer">
+                <div class="max"><b>👾 SLEVIČKY - příběh gamifikace nakupování</b></div>
+                <i>expand_more</i>
+            </label>
+            <input type="checkbox" id="why-check">
+            <div class="content padding">
+            <img src="/fred.jpg" class="fred" alt="Fred"><br>
+            <strong>SLEVIČKY: Diagnóza doby</strong><br><br>
+                Mnozí vědí, že jsem veteránem české herní scény (Vietcong atd.).<br><br>
+
+                Před třemi lety byl projekt <b>SLEVIČKY</b> jen matnou skicou v mých myšlenkách...
+                Tehdy jsem ale ještě netušil, jak moc se změní svět – a jak moc se změní můj vlastní život.<br><br>
+
+                <strong>2.5 roku mimo systém</strong><br><br>
+
+                Posledních dva a půl roku jsem nezaměstnaný.
+                Pro někoho je to statistika, pro Freda to byla škola tvrdé reality a prostor pro pozorování.
+                Když jste mimo klasický pracovní kolotoč, začnete vnímat věci, které ostatní v tom spěchu přehlížejí.
+                Vidíte, jak se společnost láme a spěchá, jak se nákupní seznamy mění v taktické plány, jak se lidé stávají de facto rukojmí barevných cenovek Lidl a Kaufland.
+                <br><br>
+
+                <strong>Slevový trh jako projev šílenství</strong><br><br>
+                To, co se dnes děje okolo slev, už není běžný obchod.
+                Je to uragán. Gamifikace nakupování.
+                Je to kolektivní psychóza.<br><br>
+                Lidé už nekupují věci, protože je potřebují, ale proto, že jsou "v akci". Hrajeme hru.
+                Slevové letáky se staly nejdůležitější literaturou dneška a já jsem se rozhodl, že tohle šílenství potřebuje řád, alespoň trošku.<br><br>
+
+                <strong>Od nuly v Golangu k funkční zbrani</strong><br><br>
+
+                Když ten nápad přišel poprvé, neuměl jsem v Golang ani řádku. Byl jsem "starý pes" odkojený na PHP.
+                Ale čas strávený bez zaměstnání mi dal jedno plus: možnost se učit. A pak přišlo AI Google Gemini.<br><br>
+
+                Dnes už SLEVIČKY nejsou jen nápad. Po 4 měsících vývoje (trošku jsem dělal na hudbě) je to nástroj.<br><br>
+                Renderuje tisíce karet zboží, třídí je, páruje a dává vám, mým přátelům, do rukou nástroj, jak se v tom víru neutopit.<br><br>
+
+                <strong>Člověk vs. nástroj</strong><br><br>
+                I když jsem momentálně bez práce, neznamená to, že jsem přestal tvořit. Právě naopak.<br><br>
+
+                <b>SLEVIČKY</b> jsou nástroj, který odpovídá na tuhle šílenou dobu.<br><br>
+
+                Pokud vám to přijde nějak užitečné, můžete mi přispět přes PayPal.<br><br><br>
+
+                Fuck the system! 👽️<br><br>
+
+                TBD:<br><br>
+                * details<br>
+                * search<br>
+                * bans<br>
+                * search profiles<br>
+                * settings profiles<br>
+                * Google profile sync?<br><br>
+
+                <h4>Jak to celé funguje?</h4>
+                input data > Go scraper > parse > filter > process > filter > JSON > UI render > a tady jste Vy 👽️<br><br>
+
+                <h4>Technicky</h4>
+                Backend je napsán v Golang, frontend HTML5, CSS3, JavaScript, jQuery + Beercss framework.<br><br>
+                Hosting Github + Cloudflare Pages.<br><br>
+                + Fred
+            </div>
+        </article>
+        <div id="paypal-container-27G3BMUCN2VU2"></div>
+        <script>
+        paypal.HostedButtons({
+            hostedButtonId: "27G3BMUCN2VU2",
+        }).render("#paypal-container-27G3BMUCN2VU2")
+        </script>            
+
+        <br>
+        <h4>Podněty a myšlenky</h4><hr>
+        <div>
+            <i>link</i>
+            💡 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeDAro5rHG_Mj2rRra3oqaWUgCVfn1asFtI3z_pgfqcrL85qg/viewform?usp=dialog">máš nápad? napiš ho sem!</a>
+        </div>
+
+        <br>
+        <h4>Pod kapotou</h4><hr>
+        <div class="s m l">📦️ local storage <span id="info_localStorage" class="bold"></span></div>
+        <div id="speed-bench" class="s m l"></div>
+
+    </div>
+    <div id="settings" class="hidden container">
+        <h3>🛠️ Nastavení</h3><hr>
+        <div class="s m l center-align">
+            <button class="handedness-button blue settings-button">👍️ levák &ndash; pravák</button><br>
+        </div>
+
+        <div class="saveload center-align">
+            <button class="save-button green hover settings-button">uložit do souboru</button>
+            <button class="load-button green hover settings-button">načíst ze souboru</button>
+        </div>
+        <input id="file" type="file" style="display:none" accept=".json">
+
+        <h3>🏪 Moje obchody</h3><hr>
+        Pokud zde není nic vybráno, zobrazí se všechny slevy.
+        <div id="mymarkets" class="center-align padding s m l"></div>
+
+        <h3>📑 Moje kategorie</h3><hr>
+        Pokud zde není nic vybráno, zobrazí se všechny slevy.
+        <div id="mycats" class="center-align padding s m l"></div>
+    </div>
+</main>
+
+<script>
+'use strict';
+
+// detect legacy browsers
+(function() {
+    const features = {
+        'fetch': window.fetch,
+        'ES6-Template-Literals': (function() { try { return !!new Function("return `t`")(); } catch(e) { return false; } })()
+    };
+    const missing = Object.keys(features).filter(key => !features[key]);
+    if (missing.length > 0) {
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.innerHTML = `
+            <div style="font-family: sans-serif; padding: 40px; text-align: center; background: #fff5f5; color: #c0392b; border: 5px solid #c0392b; margin: 20px;">
+                <h1>⚠️ Starý prohlížeč</h1>
+                <p>Pro správné fungování a bezpečnost prosím <strong>aktualizuj prohlížeč</strong> nebo použij novější počítač.</p>
+                </div>
+                `;
+            });
+            throw new Error("Legacy browser detected. Stopping execution.");
+        window.stop();
+    }
+})();
+
+// remove cache buster
+if (window.location.search.length > 0) {
+    window.history.replaceState({}, document.title, window.location.pathname);
+}
+
+// SHUFFLE prototype
+if (!Array.prototype.shuffle) {
+    Array.prototype.shuffle = function() {
+        for (let i = this.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this[i], this[j]] = [this[j], this[i]];
+        }
+        return this;
+    };
+}
+
+// SPLASH SCREEN on
+document.getElementById('loading').style.display = 'flex';
+
+// GLOBAL DEALS object
+window.deals = {};
+deals.myBlocks = [];
+deals.myLikes = [];
+deals.myCats = [];
+deals.myMarkets = [];
+
+// RESTORE DATA from LOCAL STORAGE
+try {
+    window.deals.myMarkets = JSON.parse(localStorage.getItem('myMarkets')) || [];
+    window.deals.myCats = JSON.parse(localStorage.getItem('myCats')) || [];
+} catch (e) {
+    window.deals.myMarkets = [];
+    window.deals.myCats = [];
+}
+
+// WEBSHARE
+const webShare = async (title, text, url) => {
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: title,
+                text: text,
+                url: url
+            });
+        } catch (err) {
+        }
+    }
+};
+if (!navigator.share) {
+    $('.webshare').hide();
+}
+
+// DEBUGGER
+var dtimer = null;
+function debug(x) {
+    if (!x) return;
+    const now = new Date();
+    const ts = now.getHours().toString().padStart(2, '0')
+        + ':' + now.getMinutes().toString().padStart(2, '0')
+        + ':' + now.getSeconds().toString().padStart(2, '0')
+        + '.' + now.getMilliseconds().toString().padStart(3, '0');
+    $('#debugger').append('[' + ts + '] ' + x + '<br>').addClass('debugger-on').fadeIn();
+    if (dtimer) clearTimeout(dtimer);
+    dtimer = setTimeout(function() {
+        dtimer = null;
+        $('#debugger').fadeOut(function() {
+            $('#debugger').html('').removeClass('debugger-on');
+        });
+    }, 5000);
+}
+window.debug = debug;
+
+// UUID
+var uuid = null;
+try {
+  uuid = crypto.randomUUID();
+} catch (e) {
+  uuid = ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,
+      c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+  );
+}
+
+// LOCAL STORAGE test
+let nolocalstorage = false;
+try {
+    const storage = window.localStorage;
+    const testKey = '__storage_test__';
+    storage.setItem(testKey, testKey);
+    storage.removeItem(testKey);
+    if (!storage.getItem('uuid') || storage.getItem('uuid').length !== 36) {
+        storage.setItem('uuid', uuid);
+    }
+    storage.removeItem('luid'); // Cleanup starého bordelu
+} catch (e) {
+    nolocalstorage = true;
+    console.warn('Slevičky: localStorage je blokován');
+}
+window.nolocalstorage = nolocalstorage;
+$('#info_localStorage').text(!nolocalstorage ? "OK" : "BLOKOVÁNO");
+if (nolocalstorage) {
+    $('.saveload').hide();
+    $('#load').prop('disabled', true);
+    $('#save').prop('disabled', true);
+}
+
+// MAIN CONSTANTS
+const version = '{{GIT_REV}}';
+const git_build_date = '{{DATE_REV}}';
+const git_revisions = '{{COUNT_REV}}';
+const dataFile = './data.json'; 
+const catIcons = {
+    CUKROVINKY: '🍬',
+    KOŘENÍ: '🌶️',
+    LUŠTĚNINY: '🫘',
+    MASO: '🥩',
+    MLÉKO: '🥛',
+    NÁPOJE: '🍺',
+    OBILÍ: '🌾',
+    OSTATNÍ: '📦',
+    OVOCE: '🍎',
+    OŘECHY: '🥜',
+    SÝRY: '🧀',
+    TUKY: '🧈',
+    UZENINY: '🥓',
+    VEJCE: '🥚',
+    ZELENINA: '🥦',
+};
+const categories = Object.keys(catIcons);
+
+// UPDATES checker
+function checkUpdate() {
+    if (version === '{{' + 'GIT_REV' + '}}') return;
+    const updateTimer = setInterval(() => {
+        $.getJSON('/meta.json?' + new Date().getTime(), function(data) {
+            if (data && data.version && data.version !== version) {
+                clearInterval(updateTimer);
+                $('.refresh-btn').addClass('red-text');
+            }
+        }).fail(function() {
+            console.warn('Nepodařilo se načíst meta.json.');
+        });
+    }, 5000);
+}
+
+// *** START ***
+document.addEventListener('DOMContentLoaded', () => {
+    progressBar();
+    initApp();
+});
+
+window.extras_flag = true; // bool: is extras row visible?
+window.hearts_flag = false; // bool: is hearts active?
+window.settings_flag = false; // bool: is about/settings active?
+
+const progressBar = () => {
+    var bar = "_" + Date.now();
+    document.getElementsByTagName("body")[0].insertAdjacentHTML(
+        'beforeend', '<div class="progress-container"><div class="progress-bar" id="' + bar + '" style="width: 0%"></div></div>'
+    );
+
+    var lastScrollTop = 0;
+    var scrollStartPos = 0;
+    var $extras = $('.extras');
+
+    // scrolling event handler
+    function onscroll() {
+        var scroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = Math.round(scroll * 100 / height);
+
+        if (document.getElementById(bar)) document.getElementById(bar).style.width = scrolled + '%';
+
+        var isScrollingUp = scroll < lastScrollTop;
+        var wasScrollingUp = scrollStartPos > lastScrollTop;
+        if (isScrollingUp !== wasScrollingUp) {
+            scrollStartPos = lastScrollTop;
+        }
+        var distanceMoved = Math.abs(scrollStartPos - scroll);
+        lastScrollTop = scroll <= 0 ? 0 : scroll;
+
+        // extras row
+        if (window.settings_flag) return;
+        if (window.hearts_flag) return;
+        if (window.extras_flag) {
+            if (scroll > 150 && !isScrollingUp && distanceMoved > 100) {
+                $extras.addClass('extras-hidden');
+                window.extras_flag = false;
+            }
+        } else {
+            if (scroll < 30 || (isScrollingUp && distanceMoved > 50)) {
+                $extras.removeClass('extras-hidden');
+                window.extras_flag = true;
+            }
+        }
+    };
+
+    let ticking = false;
+    window.onscroll = () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                onscroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    };
+    window.ontouchmove = () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                onscroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    };
+}
+
+const initApp = () => {
+    console.time('JSON-Fetch');
+    fetch(dataFile)
+        .then(response => {
+            if (!response.ok) {
+                $('#loading-info').text('Datový soubor nebyl nalezen!');
+                throw new Error('Datový soubor nebyl nalezen!');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.timeEnd('JSON-Fetch');
+            if (!data) {
+                $('#loading-info').text('Chyba nahrávání dat!');
+                return;
+            }
+            $('#loading-info').text('👽️ Renderuji ...');
+            let goods = [];
+            if (data && data.goods && Array.isArray(data.goods)) {
+                goods = data.goods;
+            }
+            if (goods.length === 0) {
+                $('#loading-info').text('Žádné zboží k zobrazení!');
+                console.error('Struktura dat neodpovídá: ', data);
+                return;
+            }
+
+            // populate the data
+            deals.goods = goods;
+            deals.goods_orig = goods;
+            deals.goods_rev = [...goods].reverse();
+            deals.markets = data.markets;
+            deals.catcounts = data.catcounts;
+
+            deals.keywords = data.keywords.split(' ');
+            deals.keywordsall = data.keywords;
+	        deals.keywordsindex = data.keywordsindex
+
+            deals.idhashmap = data.idhashmap
+            deals.hashidmap = {};
+            Object.entries(data.idhashmap).forEach(([id, hash]) => {
+                deals.hashidmap[hash] = parseInt(id);
+            });
+
+            const blockedWords = [
+                "albert",
+                "bez",
+                "billa",
+                "kaufland",
+                "kosti",
+                "lidl",
+                "penny",
+                "tesco",
+                "vyber"
+            ];
+            deals.topkeywords = Object.keys(deals.keywordsindex)
+                .filter(word => !blockedWords.includes(word))
+                .sort((a, b) => deals.keywordsindex[b].length - deals.keywordsindex[a].length)
+                .slice(0, 30);
+
+            deals.cats = '.c-ZELENINA, .c-OVOCE, .c-OŘECHY';
+
+            $('#stats').html(`Slev celkem: <b>${goods.length}</b>
+                <br>Obchodů celkem: <b>${data.markets.length}</b>
+                <br>Datum sestavení: <b>${data.created}</b>`);
+                
+            console.time('DOM-Render-Speed');
+            $('#deals').html('').addClass('hidden');
+
+            const start = performance.now();
+            renderDeals(goods);
+            renderMarkets(deals.markets);
+            renderCategories(categories);
+            updateNavIcons();
+            updateFavIcons();
+            loadAllLikes();
+            const end = performance.now();
+            console.timeEnd('DOM-Render-Speed');
+
+            const renderDuration = Math.round(end - start);
+            $('#speed-bench').html(`🚀 renderováno za <b>${renderDuration} ms</b>`);
+            
+            // defaults
+            setDefaults();
+            $('#deals').removeClass('hidden');
+
+            setTimeout(() => {$('#loading').addClass('fade-away');}, 500);
+            window.scrollTo({top: 0});
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            $('#loading-info').text('Chyba dat: ' + error.message);
+        });
+};
+
+// fn: renderDeals() - render the deals to the DOM
+const renderDeals = (deals) => {
+    const dealsGrid = document.getElementById('deals');
+    if (!dealsGrid) return;
+    const activeMarkets = new Set(window.deals.myMarkets || []);
+    const activeCats = new Set(window.deals.myCats || []);
+
+    dealsGrid.innerHTML = deals.filter(deal => {
+        const marketMatch = activeMarkets.size === 0 || activeMarkets.has(deal.market);
+        const catMatch = activeCats.size === 0 || activeCats.has(deal.cat);
+        return marketMatch && catMatch;
+    }).map(deal => {
+        return `
+        <article class="noselect notip product-card c-${deal.cat}" 
+                 data-id="${deal.id}" 
+                 data-market="${deal.market}">
+            <div class="heartcartrow row center-align">
+                <div class="center-align">
+                    <div class="grayscaled myheart bigger-like relative">♥️${deal.offer_count ? `<span class="badge circle tiny top right blue white-text">${deal.offer_count}</span>` : ''}</div>
+                </div>
+                <div>
+                    <img src="/markets-v2/${deal.market}.webp" class="market-image" width="60" height="60" loading="lazy">
+                </div>
+                <div class="center-align">
+                    <div class="grayscaled bigger-cart">🛒</div>
+                </div>
+            </div>
+            <div class="product-image-container">
+                <div class="image-wrapper">
+                    <img src="/images/${deal.image}" class="product-image" loading="lazy">
+                </div>
+            </div>
+            <div class="product-name bold">${deal.name}</div>
+            <div class="product-note">${deal.note}</div>
+            <div class="product-club grey white-text center-align">${deal.club}</div>
+            <div class="product-price">
+                <span class="discount mono">${deal.discount}</span>
+                <span class="price">${deal.price} <span class="volume">(${deal.volume})</span></span>
+                <span class="ppunit">${deal.ppunit}</span>
+            </div>
+            <div class="${deal.valcol} validity nowrap bold">${deal.validity}</div>
+        </article>
+    `;
+    }).join('');
+}
+
+// fn: renderMarkets() - render the markets to the DOM
+const renderMarkets = (markets) => {
+    if (!markets) return;
+    const marketsDiv = document.getElementById('mymarkets');
+    if (!marketsDiv) return;
+    window.deals = window.deals || {};
+    window.deals.myMarkets = window.deals.myMarkets || [];
+    marketsDiv.innerHTML = markets.map(market => {
+        const isActive = window.deals.myMarkets.includes(market);
+        const chipClass = isActive ? 'blue' : 'outline';
+        return `
+            <button class="chip ${chipClass} secondary" data-market="${market}">
+                <img src="/markets-v2/${market}.webp" loading="lazy" alt="${market}" class="market-image">
+                <span class="mono">${market}</span>
+            </button>
+        `;
+    }).join('');
+
+    $(marketsDiv).off('click', 'button').on('click', 'button', function() {
+        window.refresh_flag = true;
+        $('.refresh-btn').addClass('orange-text');
+        const $this = $(this);
+        const market = $this.data('market');
+        $this.toggleClass('outline blue');
+        if ($this.hasClass('blue')) {
+            if (!window.deals.myMarkets.includes(market)) {
+                window.deals.myMarkets.push(market);
+            }
+        } else {
+            window.deals.myMarkets = window.deals.myMarkets.filter(m => m !== market);
+        }
+        localStorage.setItem('myMarkets', JSON.stringify(window.deals.myMarkets));
+    });
+};
+
+// fn: renderCategories() - render the categories to the DOM
+const renderCategories = (categories) => {
+    if (!categories) return;
+    const catsDiv = document.getElementById('mycats');
+    if (!catsDiv) return;
+    window.deals = window.deals || {};
+    window.deals.myCats = window.deals.myCats || [];
+    catsDiv.innerHTML = categories.map(cat => {
+        const isActive = window.deals.myCats.includes(cat);
+        const chipClass = isActive ? 'blue' : 'outline';
+        const catIcon = catIcons[cat] || '';
+        return `
+            <button class="chip ${chipClass} secondary" data-category="${cat}">
+                <span class="mono">${catIcon} ${cat}</span>
+            </button>
+        `;
+    }).join('');
+
+    $(catsDiv).off('click', 'button').on('click', 'button', function() {
+        window.refresh_flag = true;
+        $('.refresh-btn').addClass('orange-text');
+        const $this = $(this);
+        const cat = $this.data('category');
+        $this.toggleClass('outline blue');
+        if ($this.hasClass('blue')) {
+            if (!window.deals.myCats.includes(cat)) {
+                window.deals.myCats.push(cat);
+            }
+        } else {
+            window.deals.myCats = window.deals.myCats.filter(c => c !== cat);
+        }
+        localStorage.setItem('myCats', JSON.stringify(window.deals.myCats));
+    });
+};
+
+// fn: updateFavIcons() - update the heart icons with a click handler
+function updateFavIcons() {
+    $('#deals').off('click', '.myheart').on('click', '.myheart', function(e) {
+        const $heart = $(this);
+        const $card = $heart.closest('.product-card');
+        const numericId = $card.data('id');
+        const productHash = deals.idhashmap[numericId];
+        const $allSameHearts = $(`.product-card[data-id="${numericId}"]`).find('.myheart');
+
+        // pop-in the extras row?
+        if (!window.extras_flag) {
+            window.extras_flag = true;
+            window.hearts_flag = true;
+            $('.extras').removeClass('extras-hidden');
+            $('.filter-favs').addClass('pulsefav');
+            setTimeout(() => {$('.filter-favs').removeClass('pulsefav');window.hearts_flag = false;}, 500);
+        }
+
+        $allSameHearts.toggleClass('grayscaled active');
+        if ($heart.hasClass('active')) {
+            if (!window.deals.myLikes.includes(numericId)) {
+                window.deals.myLikes.push(numericId);
+            }
+        } else {
+            window.deals.myLikes = window.deals.myLikes.filter(id => id !== numericId);
+            if (isFavFilterActive) {
+                $(`.product-card[data-id="${numericId}"]`).hide();
+            }
+        }
+        e.stopPropagation();
+        updateMyLikesCount();
+        saveLikes();
+    });
+}
+
+// fn: saveLikes() - save deals.myLikes to localStorage string
+function saveLikes() {
+    const hashesToSave = window.deals.myLikes.map(id => deals.idhashmap[id]);
+    localStorage.setItem('myLikes', JSON.stringify(hashesToSave.filter(Boolean)));
+}
+
+// fn: saveBlocks() - save deals.myBlocks to localStorage string
+function saveBlocks() {
+    const hashesToSave = window.deals.myBlocks.map(id => deals.idhashmap[id]);
+    localStorage.setItem('myBlocks', JSON.stringify(hashesToSave.filter(Boolean)));
+}
+
+// LOAD LIKES
+function loadAllLikes() {
+    const savedHashes = JSON.parse(localStorage.getItem('myLikes')) || [];
+    window.deals.myLikes = [];
+    $('.myheart').addClass('grayscaled').removeClass('active');
+    savedHashes.forEach(hash => {
+        const numericId = Object.keys(deals.idhashmap).find(key => deals.idhashmap[key] === hash);
+        if (numericId) {
+            const id = parseInt(numericId);
+            window.deals.myLikes.push(id);
+            $(`.product-card[data-id="${id}"] .myheart`)
+                .addClass('active')
+                .removeClass('grayscaled');
+        }
+    });
+    updateMyLikesCount();
+}
+
+// fn: updateMyLikesCount() - update the heart icon button with myLikes count
+function updateMyLikesCount() {
+    $('.filter-favs').html('♥️&nbsp;&nbsp;' + window.deals.myLikes.length);
+}
+
+// fn: loadAllBlocks() - populate deals.myBlocks from localStorage string
+function loadAllBlocks() {
+    const savedHashes = JSON.parse(localStorage.getItem('myBlocks')) || [];
+    window.deals.myBlocks = [];
+    savedHashes.forEach(hash => {
+        const numericId = Object.keys(deals.idhashmap).find(key => deals.idhashmap[key] === hash);
+        if (numericId) {
+            const id = parseInt(numericId);
+            window.deals.myBlocks.push(id);
+        }
+    });
+    updateMyBlocksCount();
+}
+
+// fn: updateMyBlocksCount() - update the block icon button with myBlocks count
+function updateMyBlocksCount() {
+    $('.filter-blocks').html('❌&nbsp;&nbsp;' + window.deals.myBlocks.length);
+}
+
+// FILTER FAVORITES button
+let isFavFilterActive = false;
+function filterFavs() {
+    $('.filter-favs').on('click', function() {
+        if (window.refresh_flag) refresh();
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        const $btn = $(this);
+        const $cards = $('#deals .product-card');
+        isFavFilterActive = !isFavFilterActive;
+        $btn.toggleClass('grayscaled', !isFavFilterActive);
+
+        if (isFavFilterActive) {
+            $cards.each(function() {
+                if (!$(this).find('.myheart').hasClass('active')) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                }
+            });
+            $btn.addClass('primary');
+            $btn.find('i').text('close'); 
+        } else {
+            $cards.show();
+            $btn.removeClass('primary');
+            $btn.find('i').text('favorite');
+        }
+
+        updateMyLikesCount();
+        updateCategoryBadges(window.deals.catcounts);
+    });
+}
+filterFavs();
+
+// UPDATE BOTTOM SUPERCATS BADGES
+function updateCategoryBadges(catCounts) {
+    if (!catCounts) return;
+    const globalVisible = $('#deals article:visible').length;
+
+    $('button[data-cats]').each(function() {
+        const btn = $(this);
+        const catSelectors = btn.attr('data-cats').split(',');
+        let total = 0;
+        catSelectors.forEach(selector => {
+            total += (catCounts[selector.trim().replace('.c-', '')] || 0);
+        });
+        let badge = btn.find('.cat-badge');
+        if (!badge.length) {
+            badge = $('<span class="badge blue tiny white-text bold cat-badge"></span>');
+            btn.append(badge);
+        }
+        if ($(this).hasClass('active')) {
+            badge.text(`${globalVisible}/${total}`);
+            badge.addClass('orange').removeClass('blue');
+        } else {
+            badge.text(total);
+            badge.addClass('blue').removeClass('orange');
+        }        
+        if (total) badge.show(); else badge.hide();
+    });
+}
+
+// UPDATE NAVICONS
+const updateNavIcons = () => {
+    const activeCats = new Set(window.deals.myCats || []);
+    $('nav.bottom button').each(function() {
+        const $btn = $(this);
+        const btnCatsStr = $btn.data('cats') || "";
+        const btnCats = btnCatsStr.split(',').map(c => c.trim().replace('.c-', ''));
+        const updatedIcons = btnCats
+            .map(cat => (activeCats.size === 0 || activeCats.has(cat)) ? (catIcons[cat] || '') : '')
+            .join('');
+        $btn.text(updatedIcons);
+        $btn.css('opacity', updatedIcons.trim() === '' ? '0.2' : '1');
+    });
+};
+
+// WEB-UI bindings
+$(document).ready(function() {
+    let flash_flag = false; // bool: is flash animation pending?
+    let face_flag = false; // bool: is face animation pending?
+
+    // SHARE button
+    $('#webshare').on('click', function() {
+        webShare('Slevičky', 'Aktuální slevy potravin + akční zboží přehledně na jednom místě. (public alfa)', 'https://slevicky.pages.dev/');
+    });
+
+    // SAVE button
+    $('.save-button').on('click', function(e) {
+        umlog('save_settings');
+        exportSettings();
+    });
+
+    // LOAD/FILE button
+    $('.load-button').click(function (e) {
+        $('#file').click();
+    });
+    $('#file').on('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            umlog('load_settings');
+            importSettings(file);
+        }
+        $(this).val('');
+    });
+
+    // rAZ-ZA button
+    let isReversed = false;
+    $(".btn-az").on("click", function() {
+        if (window.refresh_flag) refresh();
+        isReversed = !isReversed;
+        $(this).text(isReversed ? "🔼" : "🔽");
+        $(this).addClass("spin");
+
+        setTimeout(() => {$(this).removeClass("spin");}, 500);
+
+        const currentData = isReversed ? window.deals.goods_rev : window.deals.goods_orig;
+        renderDeals(currentData);
+        updateFavIcons();
+        loadAllLikes();
+
+        if (isFavFilterActive) {
+            $('#deals .product-card').each(function() {
+                if (!$(this).find('.myheart').hasClass('active')) {
+                    $(this).hide();
+                }
+            });
+        }
+    });
+
+    // fn: setSettingsMode() - if About or Settings is pressed
+    function setSettingsMode(state) {
+        if (state) {
+            window.settings_flag = true;
+            $('.extras').addClass('extras-hidden');
+        } else {
+            if (window.refresh_flag) refresh(); // force refresh if needed
+            window.settings_flag = false;
+            $('.extras').removeClass('extras-hidden');
+        }
+    }
+
+    // ABOUT button
+    $('.about-btn').on('click', function() {
+        window.scrollTo({top: 0});
+        const isVisible = $('#about').is(':visible');
+        $('#about, #settings, #deals').hide();
+        if (isVisible) {
+            setSettingsMode(false);
+            $('#deals').show();
+        } else {
+            setSettingsMode(true);
+            umlog('about_tab');
+            $('#about').show();
+        }
+    });
+
+    // SETTINGS button
+    $('.settings-btn').on('click', function() {
+        window.scrollTo({top: 0});
+        const isVisible = $('#settings').is(':visible');
+        $('#about, #settings, #deals').hide();
+        if (isVisible) {
+            setSettingsMode(false);
+            $('#deals').show();
+        } else {
+            setSettingsMode(true);
+            umlog('settings_tab');
+            $('#settings').show();
+        }
+    });
+
+    // SMILEY button
+    $('.mrsmiley').on('click', function() {
+        setSettingsMode(false);
+        umlog('roulette');
+        roulette();
+    });
+    
+    // EMOJI ANIMATION function
+    let currentFaceIsYummy = false;
+    function roulette() {
+        if (face_flag) return;
+        face_flag = true;
+        currentFaceIsYummy = !currentFaceIsYummy;
+        const newface = currentFaceIsYummy ? '😋' : '🤑';
+        const $face = $('.dollarface');
+        $face.removeClass('facespinner');
+        void $face[0].offsetWidth;
+        $face.addClass('facespinner');
+        setTimeout(() => {
+            $face.text(newface);
+        }, 200);
+        setTimeout(() => {
+            $face.removeClass('facespinner');
+            face_flag = false;
+        }, 1200);
+
+        setTimeout(() => {
+            $('#deals').html('').addClass('hidden');
+            let goods = window.deals.goods;        
+            goods.shuffle();
+            renderDeals(goods);
+            $('#deals article').addClass('hidden-force');
+            $(deals.cats).removeClass('hidden-force');
+            $('#settings, #about').hide()
+            $('#deals').show();
+            $('#deals').removeClass('hidden');
+        }, 300);
+
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+
+    // HANDEDNESS button
+    $('.handedness-button').on('click', function() {
+        switchHands();
+        let direction = (deals.handedness === 'right') ? '' : 'row-reverse';
+        $('.heartcartrow').removeClass('row-reverse').addClass(direction);
+    });
+
+    // SWITCH HANDEDNESS function
+    function switchHands() {
+        if (flash_flag) return;
+        flash_flag = true;
+        $('nav').addClass('flashbomb');
+        $('.lefthanded').toggle();
+        $('.righthanded').toggle();
+        const currentMode = $('.lefthanded').is(':visible') ? 'left' : 'right';
+        setTimeout(() => {$('nav').removeClass('flashbomb');flash_flag = false;}, 500);
+        deals.handedness = currentMode;
+        if (window.nolocalstorage) return;
+        localStorage.setItem('handedness', currentMode);
+    }
+
+    // EXPORT SETTINGS function
+    function exportSettings() {
+        const translateToHash = (id) => deals.idhashmap[id] || id;
+        const data = {
+            version: version,
+            handedness: localStorage.getItem('handedness'),
+            uuid: localStorage.getItem('uuid'),
+            // Proženeme IDčka přes tvou mapu
+            myCats: (deals.myCats || []).map(translateToHash),
+            myMarkets: (deals.myMarkets || []).map(translateToHash),
+            myBlocks: (deals.myBlocks || []).map(translateToHash),
+            myLikes: (deals.myLikes || []).map(translateToHash),
+        };
+        const jsonString = JSON.stringify(data, null, 2);
+        const blob = new Blob([jsonString], {type: 'application/json'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'slevicky_settings.json';
+        document.body.appendChild(a); 
+        a.click();
+
+        setTimeout(() => {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }, 0);
+    }
+
+    // IMPORT SETTINGS function
+    function importSettings(file) {
+        if (!file) {
+            console.error("Žádný soubor nebyl vybrán.");
+            return;
+        }
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const config = JSON.parse(e.target.result);
+                deals.myCats = config.myCats || [];
+                deals.myMarkets = config.myMarkets || [];
+                deals.myBlocks = config.myBlocks || [];
+                deals.myLikes = config.myLikes || [];
+                if (config.uuid) {
+                    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+                    if (uuidRegex.test(config.uuid)) {
+                        localStorage.setItem('uuid', config.uuid);
+                    }
+                }
+                if (config.handedness) localStorage.setItem('handedness', config.handedness);
+                localStorage.setItem('myCats', JSON.stringify(deals.myCats));
+                localStorage.setItem('myMarkets', JSON.stringify(deals.myMarkets));
+                localStorage.setItem('myBlocks', JSON.stringify(deals.myBlocks));
+                localStorage.setItem('myLikes', JSON.stringify(deals.myLikes));
+                alert("Nastavení bylo úspěšně importováno.");
+                refresh();
+            } catch (err) {
+                alert("Chyba při parsování JSONu: " + err.message);
+            }
+        };
+        reader.onerror = function() {
+            alert("Chyba při čtení souboru.");
+        };
+        reader.readAsText(file);
+    }
+
+    // REFRESH button
+    $('.refresh-btn').on('click', function() {
+        refresh();
+    });
+
+    // fn: refresh() - refresh the page using a buster
+    function refresh() {
+        $('.refresh-btn').prop('disabled', true).html('<i class="bigger">schedule</i>');
+        if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+            navigator.serviceWorker.controller.postMessage({type: 'SKIP_WAITING'});
+        }
+        const buster = Math.random().toString(36).substring(2, 6);
+        window.stop();
+        window.location.replace('/?' + buster);
+        throw new Error("Redirecting to fresh version...");
+    }
+
+    // close DEBUGGER
+    $('#debugger').on('click', function() {
+        dtimer = null;
+        $('#debugger').fadeOut(function() {
+            $('#debugger').html('').removeClass('debugger-on');
+        });
+    });
+
+    // set DEFAULTS function
+    function setDefaults() {
+        $('nav.bottom button').addClass('grayscaled');
+        $('.but1').removeClass('grayscaled').addClass('active');
+        $('#deals article').addClass('hidden-force');
+        $('.c-ZELENINA, .c-OVOCE, .c-OŘECHY').removeClass('hidden-force');
+        deals.handedness = 'right';
+
+        // process handedness from localStorage
+        if (!window.nolocalstorage) {
+            const savedHandedness = localStorage.getItem('handedness');
+            if (savedHandedness === 'left') {
+                $('.lefthanded').show();
+                $('.righthanded').hide();
+                deals.handedness = 'left';
+                $('.heartcartrow').addClass('row-reverse');
+            } else if (savedHandedness === 'right') {
+                $('.lefthanded').hide();
+                $('.righthanded').show();
+                deals.handedness = 'right';
+            }
+        }
+
+        updateCategoryBadges(window.deals.catcounts);
+     
+    }
+    window.setDefaults = setDefaults;
+
+    // BOTTOM NAVIGATION buttons
+    $('.btn-bottom').on('click', function() {
+        const cats = $(this).data('cats');
+        if (!cats) return;
+        if (window.refresh_flag) refresh();
+        deals.cats = cats;
+        $('nav.bottom button').addClass('grayscaled').removeClass('active');
+        const myClass = $(this).attr('class').split(' ').find(c => c.startsWith('but'));
+        $('.' + myClass).removeClass('grayscaled').addClass('active');
+        $('#deals article').addClass('hidden-force');        
+        $(cats).removeClass('hidden-force');
+        $('#settings, #about').hide()
+        $('#deals').show()
+        window.scrollTo({top: 0});
+
+        updateCategoryBadges(window.deals.catcounts);
+    });
+
+    // context event hanlder
+    window.handleContextEvent = function(e) {
+        const card = e.target.closest('.product-card');
+        if (card) {
+            const productName = card.querySelector('.product-name')?.innerText;
+            debug('produkt: ' + productName);
+            $(card).addClass('flashbomb');
+            setTimeout(() => {$(card).removeClass('flashbomb');}, 200);
+            return false;
+        }
+        // data-id
+        const elementWithId = e.target.closest('[data-id]');
+        if (elementWithId) {
+            const id = elementWithId.getAttribute('data-id');
+            debug('data-id: ' + id);
+            return false;
+        }
+        // fallback
+        const info = e.target.title || e.target.id || e.target.tagName;
+        debug('Target: ' + info);
+        return false;
+    }
+
+    // UMAMI identity
+    $(function() {
+        const pushUmamiIdentity = () => {
+            if (typeof umami !== 'undefined' && window.uuid) {
+                umami.identify({user_id: window.uuid});
+            } else {
+                setTimeout(pushUmamiIdentity, 100);
+            }
+        };
+        pushUmamiIdentity();
+    });
+
+    // UMAMI stats
+    $(function() {
+        const logDailyStats = () => {
+            const today = new Date().toISOString().slice(2, 10).replace(/-/g, '');
+            const lastLog = localStorage.getItem('sync_stats');
+            if (lastLog === today) return;
+            if (typeof umlog === 'function' && window.uuid && window.nolocalstorage === false) {
+                localStorage.setItem('sync_stats', today);
+                umlog('daily_stats', {
+                    markets: localStorage.getItem('myMarkets'),
+                    categories: localStorage.getItem('myCats')
+                });
+            } else {
+                setTimeout(logDailyStats, 10000);
+            }
+        };
+        setTimeout(logDailyStats, 10000);
+    });
+
+    // UMAMI logger
+    window.umlog = function(eventName, eventData = {}) {
+        if (typeof umami !== 'undefined' && window.uuid) {
+            const data = {
+                ...eventData,
+                user_id: window.uuid
+            };
+            umami.track(eventName, data);
+        }
+    };
+
+});
+
+// SERVICE WORKER
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, err => {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+    });
+}
+
+// PWA INSTALLER
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installButtons.forEach(btn => {
+        btn.style.display = 'block';
+    });
+});
+const installButtons = document.querySelectorAll('.install-btn');
+installButtons.forEach(btn => {
+    btn.addEventListener('click', async () => {
+        if (deferredPrompt) {
+            installButtons.forEach(b => b.style.display = 'none');
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            deferredPrompt = null;
+        }
+    });
+});
+
+// OTHER LISTENERS
+window.addEventListener('appinstalled', () => {
+    installBtn.style.display = 'none';
+    deferredPrompt = null;
+});
+
+window.addEventListener('xcontextmenu', function(e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    window.handleContextEvent(e);
+}, true);
+
+window.addEventListener('dblclick', function(e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    window.handleContextEvent(e);
+}, true);
+
+document.addEventListener('error', function (e) {
+    if (e.target.tagName.toLowerCase() === 'img') {
+        const img = e.target;
+        img.style.display = 'none';
+    }
+}, true);
+
+checkUpdate();
+
+</script>
+</body>
+</html>
