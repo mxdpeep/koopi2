@@ -4,8 +4,6 @@ deterministické hledání (určující kategorii):
 
 KOSMETIKA,avon,1
 KOSMETIKA,balea,2
-KOSMETIKA,burberry,1
-KOSMETIKA,clinique,1
 KOSMETIKA,dermacol,1
 ÚKLID,freddy,1
 
@@ -20,9 +18,10 @@ VLASY,barva na vlasy,3
 HOLENÍ,pěna na holení,1
 HOLENÍ,gel na holení,1
 
-WC,toaletní papír,1
+WC,toaletní papír,2
 WC,papírové kapesníky,1
 WC,dámské vložky,1
+WC,preservativ,1
 
 NÁDOBÍ,jar,1
 NÁDOBÍ,pur,1
@@ -51,5 +50,7 @@ ZVĚŘ,kočičí kapsičky,1
 ÚKLID,saponát,1
 ÚKLID,čistič odpadu,1
 ÚKLID,čistič trouby,1
+ÚKLID,hadr na podlahu,1
+ÚKLID,mop,1
 
 VITAMÍNY,šumivé tablety,3
