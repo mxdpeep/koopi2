@@ -118,8 +118,11 @@ var (
 var blockedGoods = []string{
 	"bez lepku",
 	"brambůrky",
+	"džus pure ginger",
 	"jarmark",
 	"jogurt",
+	"játra",
+	"kuřecí medailonky",
 	"mléko čerstvé",
 	"pomazánkové",
 	"shiitake",
@@ -127,8 +130,10 @@ var blockedGoods = []string{
 	"smetana",
 	"tvaroh",
 	"těstoviny",
+	"zrnková káva",
 	"závitky",
 	"čokoládové hvězdičky",
+	"židle",
 }
 
 // product structure
