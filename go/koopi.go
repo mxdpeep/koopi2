@@ -116,6 +116,7 @@ var (
 
 // product names to ignore
 var blockedGoods = []string{
+	"aditivum do benzínu",
 	"bez lepku",
 	"brambůrky",
 	"džus pure ginger",
