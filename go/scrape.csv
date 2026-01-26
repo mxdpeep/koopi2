@@ -68,6 +68,10 @@ KOSMETIKA,třpytky,1
 KOSMETIKA,zklidňující krém,1
 KOSMETIKA,řasenka,1
 
+KOUPEL,olej do koupele,1
+KOUPEL,pěna do koupele,1
+KOUPEL,sůl do koupele,1
+
 NÁDOBÍ,drátěnka,1
 NÁDOBÍ,houbičky na nádobí,1
 NÁDOBÍ,jar,2
@@ -85,6 +89,7 @@ PRANÍ,prací prášek,2
 SLUNCE,opalovací krém,1
 SLUNCE,opalovací olej,1
 SLUNCE,panthenol,1
+SLUNCE,repelent,1
 SLUNCE,samoopalovací krém,1
 SLUNCE,uv hydratační krém,1
 
@@ -93,6 +98,7 @@ VITAMÍNY,šumivé tablety,3
 VLASY,barva na vlasy,3
 VLASY,lak na vlasy,3
 VLASY,šampon,3
+VLASY,šampon proti lupům,3
 
 ZVÍŘATA,kočičí hračka,1
 ZVÍŘATA,kočičí kapsičky,1
@@ -103,9 +109,12 @@ ZVÍŘATA,paštiky pro kočky,1
 ZVÍŘATA,paštiky pro psy,1
 ZVÍŘATA,psí granule,1
 ZVÍŘATA,psí hračka,1
+ZVÍŘATA,psí kapsičky,1
 ZVÍŘATA,psí konzerva,1
 ZVÍŘATA,stelivo pro kočky,1
 ZVÍŘATA,stelivo pro psy,1
+ZVÍŘATA,šampon pro kočky,1
+ZVÍŘATA,šampon pro psy,1
 
 ÚKLID,aceton,1
 ÚKLID,isopropylalkohol,1
@@ -113,7 +122,8 @@ ZVÍŘATA,stelivo pro psy,1
 ÚKLID,gumové rukavice,1
 ÚKLID,hadr na podlahu,1
 ÚKLID,mop,1
-ÚKLID,saponát,1
+ÚKLID,plastový kbelík,1
+ÚKLID,saponát,2
 ÚKLID,technický líh,1
 ÚKLID,čistič odpadu,1
 ÚKLID,čistič trouby,1
