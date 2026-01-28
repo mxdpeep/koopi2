@@ -5,6 +5,7 @@ deterministické hledání (určující kategorii):
 HOLENÍ,gillette,1
 HOLENÍ,old spice,1
 HOLENÍ,rexona,1
+
 KOSMETIKA,astor,1
 KOSMETIKA,avon,1
 KOSMETIKA,balea,2
@@ -12,19 +13,23 @@ KOSMETIKA,dermacol,1
 KOSMETIKA,garnier,1
 KOSMETIKA,loreal,1
 KOSMETIKA,maybelline,1
+
 KOUPEL,dove,2
 KOUPEL,nivea,2
-VLASY,garnier,2
+
 VLASY,palette,1
 VLASY,pantene,1
 VLASY,schauma,1
 VLASY,schwarzkopf,1
 VLASY,taft,1
+
 ZVÍŘATA,pedigree,2
 ZVÍŘATA,whiskas,2
-ÚKLID,freddy,1
+
 ÚKLID,okena,1
 ÚKLID,savo,1
+
+
 
 ostatní hledání:
 
@@ -40,25 +45,22 @@ DĚTI,přesnídávka,1
 DĚTI,příkrm,1
 DĚTI,sunar,2
 DĚTI,vlhčené ubrousky,2
-
 HOLENÍ,gel na holení,1
 HOLENÍ,pěna na holení,1
 HOLENÍ,voda po holení,1
 HOLENÍ,žiletky,1
-
 HYGIENA,dámské vložky,1
 HYGIENA,papírové kapesníky,1
 HYGIENA,preservativ,1
 HYGIENA,toaletní papír,2
-
 KOSMETIKA,denní krém,1
 KOSMETIKA,hojivý krém na rty,1
 KOSMETIKA,jelení lůj,1
 KOSMETIKA,kompaktní pudr,1
 KOSMETIKA,krém na rty,1
 KOSMETIKA,krém proti vráskám,1
-KOSMETIKA,makeup,1
 KOSMETIKA,kyselina hyaluronová,1
+KOSMETIKA,makeup,1
 KOSMETIKA,micelární voda,1
 KOSMETIKA,noční krém,1
 KOSMETIKA,oční linka,1
@@ -67,11 +69,9 @@ KOSMETIKA,rtěnka,1
 KOSMETIKA,třpytky,1
 KOSMETIKA,zklidňující krém,1
 KOSMETIKA,řasenka,1
-
 KOUPEL,olej do koupele,1
 KOUPEL,pěna do koupele,1
 KOUPEL,sůl do koupele,1
-
 NÁDOBÍ,drátěnka,1
 NÁDOBÍ,houbičky na nádobí,1
 NÁDOBÍ,jar,2
@@ -81,25 +81,20 @@ NÁDOBÍ,odmašťovač,1
 NÁDOBÍ,pur,3
 NÁDOBÍ,tablety do myčky,1
 NÁDOBÍ,tekutý čistící krém,1
-
 PRANÍ,prací gel,2
 PRANÍ,prací kapsle,2
 PRANÍ,prací prášek,2
-
 SLUNCE,opalovací krém,1
 SLUNCE,opalovací olej,1
 SLUNCE,panthenol,1
 SLUNCE,repelent,1
 SLUNCE,samoopalovací krém,1
 SLUNCE,uv hydratační krém,1
-
 VITAMÍNY,šumivé tablety,3
-
 VLASY,barva na vlasy,3
 VLASY,lak na vlasy,3
-VLASY,šampon,3
 VLASY,šampon proti lupům,3
-
+VLASY,šampon,3
 ZVÍŘATA,kočičí hračka,1
 ZVÍŘATA,kočičí kapsičky,1
 ZVÍŘATA,kočičí konzervy,1
@@ -115,12 +110,12 @@ ZVÍŘATA,stelivo pro kočky,1
 ZVÍŘATA,stelivo pro psy,1
 ZVÍŘATA,šampon pro kočky,1
 ZVÍŘATA,šampon pro psy,1
-
 ÚKLID,aceton,1
-ÚKLID,isopropylalkohol,1
 ÚKLID,benzín,1
+ÚKLID,freddy,1
 ÚKLID,gumové rukavice,1
 ÚKLID,hadr na podlahu,1
+ÚKLID,isopropylalkohol,1
 ÚKLID,mop,1
 ÚKLID,plastový kbelík,1
 ÚKLID,saponát,2
