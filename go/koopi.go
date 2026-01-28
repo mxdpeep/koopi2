@@ -123,7 +123,7 @@ var blockedGoods = []string{
 	"jarmark",
 	"jogurt",
 	"játra",
-	"kuřecí medailonky",
+	"kuřecí",
 	"mléko čerstvé",
 	"pomazánkové",
 	"shiitake",
