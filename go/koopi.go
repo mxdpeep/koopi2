@@ -120,13 +120,13 @@ var blockedGoods = []string{
 	"bez lepku",
 	"brambůrky",
 	"džus pure ginger",
+	"fazole purpurová",
 	"jarmark",
 	"jogurt",
 	"játra",
-	"fazole purpurová",
-	"oplatka jarmila",
 	"kuřecí",
 	"mléko čerstvé",
+	"oplatka jarmila",
 	"pomazánkové",
 	"shiitake",
 	"skořicové kroužky",
@@ -136,6 +136,7 @@ var blockedGoods = []string{
 	"zrnková káva",
 	"závitky",
 	"čokoládové hvězdičky",
+	"šťáva",
 	"židle",
 }
 
