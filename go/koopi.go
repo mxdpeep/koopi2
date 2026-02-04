@@ -127,8 +127,8 @@ var blockedGoods = []string{
 	"játra",
 	"kuřecí",
 	"limonáda",
-	"mléčná",
 	"mléko čerstvé",
+	"mléčná",
 	"nápoj",
 	"oplatka jarmila",
 	"pomazánkové",
@@ -142,6 +142,7 @@ var blockedGoods = []string{
 	"zrnková káva",
 	"závitky",
 	"čokoládové hvězdičky",
+	"řetězová pila",
 	"šťáva",
 	"židle",
 }
