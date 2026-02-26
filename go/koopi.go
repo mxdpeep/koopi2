@@ -118,6 +118,7 @@ var (
 var blockedGoods = []string{
 	"aditivum do benzínu",
 	"aditivum zimní",
+	"benzínová pila",
 	"bez lepku",
 	"brambůrky",
 	"cibule",
