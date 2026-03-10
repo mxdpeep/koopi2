@@ -124,6 +124,8 @@ var blockedGoods = []string{
 	"kuře",
 	"hrášek",
 	"kompot",
+	"ovocné",
+	"křupky",
 	"brambůrky",
 	"cibule",
 	"džus pure ginger",
