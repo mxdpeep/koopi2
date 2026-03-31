@@ -116,6 +116,10 @@ var (
 
 // product names to ignore
 var blockedGoods = []string{
+	"Hollandia",
+	"Jarmark",
+	"Pikok",
+
 	"aditivum do benzínu",
 	"aditivum zimní",
 	"benzínová pila",
