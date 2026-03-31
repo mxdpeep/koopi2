@@ -34,20 +34,26 @@ import (
 )
 
 const (
-	HTML_CACHE         = "../cache"
-	IMAGE_CACHE        = "../images"
-	INPUT_CSV          = "scrape.csv"
-	OUTPUT_CSV         = "koopi.csv"
-	OUTPUT_JSON        = "koopi.json"
-	KOOPI_HOME_URL     = "https://www.kupi.cz"
-	KOOPI_IMAGE_URL    = "https://img.kupi.cz"
-	KOOPI_SEARCH_URL   = "https://www.kupi.cz/hledej?f="
-	KOOPI_SUBPAGE      = "&page="
+	HTML_CACHE  = "../cache"
+	IMAGE_CACHE = "../images"
+
+	INPUT_CSV   = "scrape.csv"
+	OUTPUT_CSV  = "koopi.csv"
+	OUTPUT_JSON = "koopi.json"
+
+	KOOPI_HOME_URL   = "https://www.kupi.cz"
+	KOOPI_IMAGE_URL  = "https://img.kupi.cz"
+	KOOPI_SEARCH_URL = "https://www.kupi.cz/hledej?f="
+	KOOPI_SUBPAGE    = "&page="
+
 	LOCK_FILE          = "/tmp/koopi2.lock"
 	LOCK_FILE_DURATION = time.Hour
-	MAX_THREADS        = 5
-	MAX_SCRAPED_GOODS  = 1000
-	REQ_TIMEOUT        = 10 * time.Second
+
+	MAX_THREADS       = 7
+	MAX_SCRAPED_GOODS = 777
+	SLEEP_RANDOM_MS   = 77777
+	SLEEP_STATIC_MS   = 17777
+	REQ_TIMEOUT       = 17 * time.Second
 )
 
 // UA strings
@@ -110,7 +116,7 @@ var (
 	reFutureDate = regexp.MustCompile(`(\d{1,2})\.\s*(\d{1,2})\.`)
 	// non-alphanumeric
 	nonAlphanumeric = regexp.MustCompile("[^a-z0-9]+")
-	// for bones
+	// bones
 	regaz = regexp.MustCompile(`[^a-z\s]+`)
 )
 
@@ -195,6 +201,7 @@ type Goods struct {
 	ScrapedAt    string
 }
 
+// getBone - helper function to get string bones
 func getBone(s string) string {
 	s = removeDiacritics(strings.ToLower(s))
 	s = regaz.ReplaceAllString(s, "")
@@ -212,14 +219,17 @@ func removeDiacritics(s string) string {
 
 // normalizeCzechString - helper function to normalize Czech strings for comparison
 func normalizeCzechString(s string) string {
-	// 1. malá písmena
 	s = strings.ToLower(s)
-	// 2. odstranění diakritiky
 	s = removeDiacritics(s)
-	// 3. nahrazení nealfanumerických znaků mezerou
 	s = nonAlphanumeric.ReplaceAllString(s, " ")
-	// 4. ořez white space
 	s = strings.TrimSpace(s)
+	return s
+}
+
+// typoFix - helper function to fix spaces to non-breakable spaces
+func typoFix(s string) string {
+	s = rePreps.ReplaceAllString(s, "$1$2\u00A0")
+	s = reUnits.ReplaceAllString(s, "$1\u00A0$2")
 	return s
 }
 
@@ -246,13 +256,6 @@ func deduplicateGoods(scrapedGoods []Goods) []Goods {
 		finalGoods = append(finalGoods, good)
 	}
 	return finalGoods
-}
-
-// typoFix - fix spaces to non-breakable spaces
-func typoFix(s string) string {
-	s = rePreps.ReplaceAllString(s, "$1$2\u00A0")
-	s = reUnits.ReplaceAllString(s, "$1\u00A0$2")
-	return s
 }
 
 // check the app lock
@@ -559,9 +562,9 @@ func scrapePage(UA string, ctx context.Context, urlToScrape string, cacheName st
 
 		// console stats
 		if len(goodsList) == 0 {
-			log.Printf("📦 %d [%s] %sextracted 0 items (cache) %s%s%s", len(*allGoods), query, ColorBlue, ColorCyan, urlToScrape, ColorReset)
+			log.Printf("🫥 %d %s %s0%s (cache) %s%s%s", len(*allGoods), query, ColorBlue, ColorReset, ColorCyan, urlToScrape, ColorReset)
 		} else {
-			log.Printf("📦 %d [%s] extracted %s%d items%s (cache)", len(*allGoods), query, ColorBlue, len(goodsList), ColorReset)
+			log.Printf("📦 %d %s %s+%d%s", len(*allGoods), query, ColorBlue, len(goodsList), ColorReset)
 		}
 		return
 	}
@@ -574,7 +577,7 @@ func scrapePage(UA string, ctx context.Context, urlToScrape string, cacheName st
 	case <-rateLimiter:
 		defer func() {
 			// A. Calculate sleep time
-			sleepTime := time.Duration(rand.Intn(50000)+10000) * time.Millisecond
+			sleepTime := time.Duration(rand.Intn(SLEEP_RANDOM_MS)+SLEEP_STATIC_MS) * time.Millisecond
 
 			// B. Wait on a Timer or Context Done (INTERRUPTIBLE SLEEP!)
 			timer := time.NewTimer(sleepTime)
@@ -592,7 +595,7 @@ func scrapePage(UA string, ctx context.Context, urlToScrape string, cacheName st
 		}()
 	}
 
-	log.Printf("🔎 [%s] scrape %s%s%s", query, ColorCyan, urlToScrape, ColorReset)
+	log.Printf("🔎 %s%s%s %s%s%s", ColorBold, query, ColorReset, ColorCyan, urlToScrape, ColorReset)
 
 	client := &http.Client{
 		Timeout: REQ_TIMEOUT,
@@ -605,7 +608,7 @@ func scrapePage(UA string, ctx context.Context, urlToScrape string, cacheName st
 	req.Header.Set("User-Agent", UA)
 	res, err := client.Do(req)
 	if err != nil {
-		//		log.Printf("[%s] 💥 error during request: %v", query, err)
+		// log.Printf("[%s] 💥 error during request: %v", query, err)
 		return
 	}
 	defer res.Body.Close()
@@ -643,10 +646,10 @@ func scrapePage(UA string, ctx context.Context, urlToScrape string, cacheName st
 
 	// console
 	if total == 0 {
-		log.Printf("📦 %d [%s] %sextracted 0 items %s%s%s", total, query, ColorBlue, ColorCyan, urlToScrape, ColorReset)
+		log.Printf("🫥 %d %s %s0%s%s%s", total, query, ColorBlue, ColorCyan, urlToScrape, ColorReset)
 		return
 	} else {
-		log.Printf("📦 %d [%s] extracted %s%d items%s", total, query, ColorBlue, len(goodsList), ColorReset)
+		log.Printf("📦 %d %s %s+%d%s", total, query, ColorBlue, len(goodsList), ColorReset)
 	}
 }
 

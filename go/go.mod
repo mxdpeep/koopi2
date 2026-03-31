@@ -4,6 +4,7 @@ go 1.26.1
 
 require (
 	github.com/PuerkitoBio/goquery v1.10.3
+	github.com/chai2010/webp v1.4.0
 	golang.org/x/text v0.33.0
 )
 
