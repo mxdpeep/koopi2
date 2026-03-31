@@ -17,3 +17,36 @@
 🚽 HYGIENA - toaletní papír, kapesníky, vložky
 💊 VITAMÍNY - doplňky stravy, zdravá výživa
 📦 OSTATNÍ
+
+----
+
+Návrh rozložení pro Drogošku (15 slotů):
+DĚTI (🍼🚼🧸) - Pleny, výživa, baby kosmetika. (Tady fakt neuhýbej, je to tvůj tahák).
+
+ZVÍŘATA (🐱🐶🐾) - Granule, kapsičky, podestýlky.
+
+VLASY (💇‍♀️🧴✨) - Šampony, barvy, laky.
+
+TĚLO & KOUPEL (🧼🚿🛁) - Sprcháče, mýdla, pěny.
+
+PLEŤ & KRÉMY (🧴🧖‍♀️✨) - Denní/noční krémy, hyaluron, opalováky (SLUNCE).
+
+KOSMETIKA (💄💅💋) - Makeup, řasenky, rtěnky, nehty.
+
+HOLENÍ (🪒🧔‍♂️🧼) - Žiletky, pěny, Old Spice/Gillette.
+
+HYGIENA (🩹🩸🧼) - Vložky, tampony, kapesníky, dezinfekce.
+
+ÚSTNÍ HYGIENA (🪥🦷🍏) - Pasty, kartáčky, ústní vody.
+
+TOALEŤÁK (🧻🏠✨) - Toaletní papír (zaslouží si vlastní slot, je to "české zlato").
+
+PRANÍ (🧺🫧🧼) - Prášky, gely, aviváže.
+
+NÁDOBÍ (🍽️🧼🧽) - Jar, tablety do myčky, houbičky.
+
+ÚKLID (🧹🧼🏠) - Savo, čističe, mopy, technická drogerie (aceton).
+
+VITAMÍNY (💊🍋💪) - Doplňky stravy, šumáky.
+
+OSTATNÍ (📦🌀❓) - Všechno, co tvůj filtr nezabije a nevejde se jinam.
