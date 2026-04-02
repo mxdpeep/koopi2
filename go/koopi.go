@@ -145,7 +145,7 @@ var blockedGoods = []string{
 	"kniha",
 	"kompot",
 	"kuře",
-	"masturbator",
+	"masturbátor",
 	"víno",
 	"papír",
 	"poleva",
