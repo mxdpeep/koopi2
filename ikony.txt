@@ -1,52 +1,19 @@
-🪥 ÚSTA - pasty, kartáčky, ústní vody, nitě
+🦷 ÚSTA - pasty, kartáčky, ústní vody, nitě
 💇 VLASY - šampony, gely, oleje na vousy, barvy
 💄 KOSMETIKA - krémy, séra, masky, micelární vody, rtěnky, makeup
 
-🧽 KOUPEL - gely, mýdla, soli do koupele, oleje do koupele
+🚿 KOUPEL - gely, mýdla, soli do koupele, oleje do koupele
 🪒 HOLENÍ - žiletky, strojky, pěny, vosky
 🌹 VŮNĚ - parfémy, deodoranty, antiperspiranty
 
 🫧 PRANÍ - prášky, prací gely, kapsle
-🧼 ÚKLID - chemie na všechno od podlahy po WC
+🧹 ÚKLID - chemie na všechno od podlahy po WC
 🍽️ NÁDOBÍ - tablety do myčky, jar, leštidla, odmašťovače
 
-👶 DĚTI - kosmetika pro prcky, výživa, pleny
+🍼 DĚTI - kosmetika pro prcky, výživa, pleny
 🌞 SLUNCE - opalovací krémy, repelenty
 🐶 ZVÍŘATA - granule, stelivo, hračky
 
-🚽 HYGIENA - toaletní papír, kapesníky, vložky
+🩸 HYGIENA - toaletní papír, kapesníky, vložky
 💊 VITAMÍNY - doplňky stravy, zdravá výživa
 📦 OSTATNÍ
-
-----
-
-Návrh rozložení pro Drogošku (15 slotů):
-DĚTI (🍼🚼🧸) - Pleny, výživa, baby kosmetika. (Tady fakt neuhýbej, je to tvůj tahák).
-
-ZVÍŘATA (🐱🐶🐾) - Granule, kapsičky, podestýlky.
-
-VLASY (💇‍♀️🧴✨) - Šampony, barvy, laky.
-
-TĚLO & KOUPEL (🧼🚿🛁) - Sprcháče, mýdla, pěny.
-
-PLEŤ & KRÉMY (🧴🧖‍♀️✨) - Denní/noční krémy, hyaluron, opalováky (SLUNCE).
-
-KOSMETIKA (💄💅💋) - Makeup, řasenky, rtěnky, nehty.
-
-HOLENÍ (🪒🧔‍♂️🧼) - Žiletky, pěny, Old Spice/Gillette.
-
-HYGIENA (🩹🩸🧼) - Vložky, tampony, kapesníky, dezinfekce.
-
-ÚSTNÍ HYGIENA (🪥🦷🍏) - Pasty, kartáčky, ústní vody.
-
-TOALEŤÁK (🧻🏠✨) - Toaletní papír (zaslouží si vlastní slot, je to "české zlato").
-
-PRANÍ (🧺🫧🧼) - Prášky, gely, aviváže.
-
-NÁDOBÍ (🍽️🧼🧽) - Jar, tablety do myčky, houbičky.
-
-ÚKLID (🧹🧼🏠) - Savo, čističe, mopy, technická drogerie (aceton).
-
-VITAMÍNY (💊🍋💪) - Doplňky stravy, šumáky.
-
-OSTATNÍ (📦🌀❓) - Všechno, co tvůj filtr nezabije a nevejde se jinam.

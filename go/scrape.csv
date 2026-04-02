@@ -2,9 +2,10 @@ CATEGORY,QUERY,PAGES
 
 deterministické hledání (určující kategorii):
 
-HOLENÍ,gillette,1
-HOLENÍ,old spice,1
-HOLENÍ,rexona,1
+HOLENÍ,gillette,2
+HOLENÍ,old spice,2
+HOLENÍ,rexona,2
+HOLENÍ,žiletky,2
 
 KOSMETIKA,astor,1
 KOSMETIKA,avon,1
@@ -34,11 +35,13 @@ ZVÍŘATA,whiskas,2
 ÚKLID,okena,1
 ÚKLID,savo,1
 
+OSTATNÍ,osvěžovač vzduchu,1
 
 
 ostatní hledání:
 
 DĚTI,bebivita,1
+DĚTI,dětská výživa,1
 DĚTI,dětské mléko,1
 DĚTI,hamánek,1
 DĚTI,hippp,1
@@ -90,6 +93,7 @@ NÁDOBÍ,odmašťovač,1
 NÁDOBÍ,pur,3
 NÁDOBÍ,tablety do myčky,1
 NÁDOBÍ,tekutý čistící krém,1
+PRANÍ,aviváž,2
 PRANÍ,prací gel,2
 PRANÍ,prací kapsle,2
 PRANÍ,prací prášek,2
@@ -113,6 +117,8 @@ ZVÍŘATA,pamlsky pro kočky,1
 ZVÍŘATA,pamlsky pro psy,1
 ZVÍŘATA,paštiky pro kočky,1
 ZVÍŘATA,paštiky pro psy,1
+ZVÍŘATA,podestýlka pro kočky,1
+ZVÍŘATA,podestýlka pro psy,1
 ZVÍŘATA,psí granule,1
 ZVÍŘATA,psí hračka,1
 ZVÍŘATA,psí kapsičky,1
@@ -121,6 +127,9 @@ ZVÍŘATA,stelivo pro kočky,1
 ZVÍŘATA,stelivo pro psy,1
 ZVÍŘATA,šampon pro kočky,1
 ZVÍŘATA,šampon pro psy,1
+ZVÍŘATA,pro morče,1
+ZVÍŘATA,pro křečka,1
+ZVÍŘATA,pro králíka,1
 ÚKLID,aceton,1
 ÚKLID,benzín,1
 ÚKLID,freddy,1
@@ -133,3 +142,6 @@ ZVÍŘATA,šampon pro psy,1
 ÚKLID,technický líh,1
 ÚKLID,čistič odpadu,1
 ÚKLID,čistič trouby,1
+ÚSTA,kartáček na zuby,2
+ÚSTA,zubní pasta,2
+ÚSTA,ústní voda,2
