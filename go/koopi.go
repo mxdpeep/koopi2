@@ -126,6 +126,7 @@ var blockedGoods = []string{
 	"Jarmex",
 	"Pikok",
 	"Pilos",
+	"Tesco",
 
 	"aditivum do benzínu",
 	"aditivum zimní",
@@ -140,6 +141,7 @@ var blockedGoods = []string{
 	"hrášek",
 	"jogurt",
 	"játra",
+	"gril",
 	"kniha",
 	"kompot",
 	"kuře",
