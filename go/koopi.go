@@ -122,9 +122,10 @@ var (
 
 // product names to ignore
 var blockedGoods = []string{
-	"Hollandia",
 	"Jarmark",
+	"Jarmex",
 	"Pikok",
+	"Pilos",
 
 	"aditivum do benzínu",
 	"aditivum zimní",
@@ -133,10 +134,10 @@ var blockedGoods = []string{
 	"bonboniéra",
 	"brambůrky",
 	"cibule",
+	"cibulka",
 	"džus pure ginger",
 	"fazole purpurová",
 	"hrášek",
-	"jarmark",
 	"jogurt",
 	"játra",
 	"kniha",
@@ -152,7 +153,6 @@ var blockedGoods = []string{
 	"omáčky",
 	"oplatka jarmila",
 	"ovocné",
-	"pikok",
 	"pomazánkové",
 	"protein",
 	"puding",
