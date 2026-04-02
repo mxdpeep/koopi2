@@ -16,8 +16,6 @@ import (
 	"github.com/chai2010/webp"
 )
 
-// přidej "sync/atomic" do importů
-
 func main() {
 	paths := []string{"./images", "./markets-v2"}
 	var wg sync.WaitGroup
@@ -74,7 +72,7 @@ func convert(in, out string) error {
 		fmt.Printf("Decode: Error converting %s: %v\n", in, err)
 		cmd := exec.Command("convert", in, "-quality", "80", out)
 		if err := cmd.Run(); err != nil {
-			log.Printf("Even ImageMagick failed on %s: %v", in, err)
+			log.Printf("ImageMagick failed on %s: %v", in, err)
 			return err
 		}
 		return nil
