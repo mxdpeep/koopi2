@@ -159,6 +159,8 @@ var blockedGoods = []string{
 	"ovocné",
 	"panenka",
 	"papír",
+	"řepa",
+	"žervé",
 	"podlaha",
 	"poleva",
 	"pomazánkové",
