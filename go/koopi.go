@@ -162,6 +162,7 @@ var blockedGoods = []string{
 	"papír",
 	"podlaha",
 	"poleva",
+	"pomazánka",
 	"pomazánkové",
 	"pro koně",
 	"protein",
