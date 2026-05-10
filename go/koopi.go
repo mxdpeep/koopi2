@@ -171,6 +171,7 @@ var blockedGoods = []string{
 	"rohlík",
 	"rýžová",
 	"rýžový",
+	"sekačka",
 	"shiitake",
 	"skořicové",
 	"slanina",
