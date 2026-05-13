@@ -142,6 +142,7 @@ var blockedGoods = []string{
 	"benzínová pila",
 	"bez lepku",
 	"bonboniéra",
+	"bonbony",
 	"brambůrky",
 	"cibule",
 	"cibulka",
