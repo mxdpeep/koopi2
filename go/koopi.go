@@ -123,7 +123,6 @@ var (
 // markets to ignore
 var blockedMarkets = []string{
 	"auto kelly",
-	"barvy a laky",
 	"benu lékárna",
 	"tesco",
 	"albert",
@@ -131,11 +130,11 @@ var blockedMarkets = []string{
 
 // product names to ignore
 var blockedGoods = []string{
-	"Jarmark",
-	"Jarmex",
-	"Parkside",
-	"Pikok",
-	"Pilos",
+	"jarmark",
+	"jarmex",
+	"parkside",
+	"pikok",
+	"pilos",
 
 	"aditivum do benzínu",
 	"aditivum zimní",
