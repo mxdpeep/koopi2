@@ -193,6 +193,7 @@ var blockedGoods = []string{
 	"sýr",
 	"tvaroh",
 	"těstoviny",
+	"vibrátor",
 	"vodka",
 	"víno",
 	"vířivka",
