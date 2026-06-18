@@ -135,6 +135,7 @@ var blockedGoods = []string{
 	"parkside",
 	"pikok",
 	"pilos",
+	"stone master",
 
 	"aditivum do benzínu",
 	"aditivum zimní",
