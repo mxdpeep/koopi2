@@ -1,0 +1,19 @@
+/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Max-Age: 86400
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-Robots-Tag: noindex
+  Referrer-Policy: no-referrer
+
+/index.html
+  Cache-Control: public, max-age=86400
+
+/images/*
+  Cache-Control: public, max-age=2592000, immutable
+
+/markets-v2/*
+  Cache-Control: public, max-age=2592000, immutable
+
+/jquery.min.js
+  Cache-Control: public, max-age=31104000, immutable
