@@ -162,6 +162,7 @@ var blockedGoods = []string{
 	"kuře",
 	"kuřecí",
 	"káva",
+	"klobása",
 	"křovinořez",
 	"křupky",
 	"limonáda",
