@@ -212,6 +212,8 @@ var blockedGoods = []string{
 	"čaj",
 	"čokoládové",
 	"řepa",
+	"salám",
+	"omáčka",
 	"řetězová",
 	"řízky",
 	"šunka",
