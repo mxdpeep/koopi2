@@ -134,6 +134,7 @@ var blockedGoods = []string{
 	"jarmex",
 	"k-purland",
 	"kim master",
+	"mechanical master",
 	"parkside",
 	"pikok",
 	"pilos",
