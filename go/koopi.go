@@ -201,6 +201,7 @@ var blockedGoods = []string{
 	"salát",
 	"sekačka",
 	"shiitake",
+	"sirup",
 	"skořicové",
 	"slanina",
 	"smetana",
